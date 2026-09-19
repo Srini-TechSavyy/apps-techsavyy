@@ -112,6 +112,11 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #38bdf8;
         }
+
+        /* Futuristic HUD Custom Cursor for Visualizer */
+        .hud-cursor-area {
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><circle cx='16' cy='16' r='10' fill='none' stroke='%230284c7' stroke-width='1.5' stroke-dasharray='4 2'/><circle cx='16' cy='16' r='3' fill='%230284c7'/><line x1='16' y1='2' x2='16' y2='7' stroke='%230284c7' stroke-width='1.5'/><line x1='16' y1='25' x2='16' y2='30' stroke='%230284c7' stroke-width='1.5'/><line x1='2' y1='16' x2='7' y2='16' stroke='%230284c7' stroke-width='1.5'/><line x1='25' y1='16' x2='30' y2='16' stroke='%230284c7' stroke-width='1.5'/></svg>") 16 16, crosshair;
+        }
     </style>
 </head>
 <body class="relative antialiased selection:bg-sky-200 selection:text-sky-900 overflow-x-hidden">
@@ -208,8 +213,8 @@
                         </div>
 
                         <!-- Canvas Container -->
-                        <div class="relative w-full h-64 rounded-2xl overflow-hidden bg-gradient-to-b from-sky-900/5 to-sky-50/50 border border-sky-100">
-                            <canvas id="hero-canvas" class="w-full h-full cursor-crosshair"></canvas>
+                        <div class="relative w-full h-64 rounded-2xl overflow-hidden bg-gradient-to-b from-sky-900/5 to-sky-50/50 border border-sky-100 hud-cursor-area">
+                            <canvas id="hero-canvas" class="w-full h-full"></canvas>
                             
                             <!-- Interactive overlay badge -->
                             <div class="absolute bottom-3 right-3 pointer-events-none text-[10px] font-mono text-sky-700 bg-white/90 backdrop-blur-md px-2 py-1 rounded-lg border border-sky-200 shadow-2xs">
