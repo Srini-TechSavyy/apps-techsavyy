@@ -1,444 +1,637 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Techsavyy — Quantum Nexus & Hyper-Apps</title>
-<link rel="icon" href="/favicon.ico">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@400;500;600;700&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techsavyy — Small apps. Useful ideas.</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        sky: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #eef7ff 0%, #e0f2fe 35%, #f0f9ff 70%, #e6f4ff 100%);
+            color: #0f172a;
+            min-height: 100vh;
+        }
 
-:root {
-  --neon-cyan: #00f3ff;
-  --neon-magenta: #ff007f;
-  --neon-violet: #8a2be2;
-  --hud-blue: rgba(0, 243, 255, 0.15);
-  --bg-deep: #02040a;
-  --glass-bg: rgba(4, 12, 30, 0.65);
-  --glass-border: rgba(0, 243, 255, 0.35);
-}
+        /* Futuristic Glassmorphism Panel Tokens */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.85);
+            box-shadow: 
+                0 10px 30px -5px rgba(14, 165, 233, 0.08),
+                0 0 0 1px rgba(186, 230, 253, 0.35),
+                inset 0 1px 1px rgba(255, 255, 255, 0.9);
+        }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  background: var(--bg-deep);
-  color:#e2f1ff;
-  font-family: 'Rajdhani', sans-serif;
-  min-height:100vh;
-  overflow-x: hidden;
-  position: relative;
-}
+        .glass-card {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 20px -2px rgba(14, 165, 233, 0.05);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-/* ==========================================
-   HYPER-FUTURISTIC ANIMATED BACKGROUND
-   ========================================== */
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.92);
+            transform: translateY(-4px);
+            box-shadow: 
+                0 12px 30px -4px rgba(14, 165, 233, 0.15),
+                0 0 15px rgba(56, 189, 248, 0.2);
+            border-color: rgba(56, 189, 248, 0.6);
+        }
 
-/* Layer 1: Cosmic Plasma Glows & Nebula Particles */
-body::before {
-  content: "";
-  position: fixed;
-  inset: -50%;
-  width: 200%;
-  height: 200%;
-  z-index: -3;
-  background: 
-    radial-gradient(circle at 50% 30%, rgba(138, 43, 226, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 20% 70%, rgba(0, 243, 255, 0.2) 0%, transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(255, 0, 127, 0.25) 0%, transparent 45%),
-    radial-gradient(2px 2px at 20px 30px, #00f3ff, transparent),
-    radial-gradient(2px 2px at 40px 70px, #ff007f, transparent),
-    radial-gradient(2px 2px at 50px 160px, #ffffff, transparent),
-    radial-gradient(2px 2px at 90px 40px, #00f3ff, transparent);
-  background-size: 100% 100%, 100% 100%, 100% 100%, 180px 180px, 240px 240px, 120px 120px, 200px 200px;
-  animation: nebulaRotate 35s linear infinite;
-}
+        .glass-button {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(186, 230, 253, 0.6);
+            transition: all 0.25s ease;
+        }
 
-/* Layer 2: Perspective Warp Grid + Dynamic Holographic Scanline */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  background: 
-    /* Perspective Cyber Grid */
-    linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px),
-    /* Holographic Beam Sweep */
-    linear-gradient(180deg, transparent 0%, rgba(0, 243, 255, 0.12) 50%, transparent 100%);
-  background-size: 50px 50px, 50px 50px, 100% 300px;
-  animation: 
-    gridMove 8s linear infinite,
-    scanSweep 6s ease-in-out infinite;
-  pointer-events: none;
-}
+        .glass-button:hover {
+            background: rgba(255, 255, 255, 1);
+            border-color: rgba(14, 165, 233, 0.6);
+            box-shadow: 0 4px 14px rgba(14, 165, 233, 0.15);
+        }
 
-/* Starfield Pulse Overlay */
-.stars-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: radial-gradient(circle at 50% 50%, rgba(2, 4, 10, 0.3) 0%, rgba(2, 4, 10, 0.85) 100%);
-  pointer-events: none;
-}
+        /* Background Ambient Glow Effects */
+        .ambient-glow {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(100px);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.6;
+        }
 
-@keyframes nebulaRotate {
-  0% { transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(180deg) scale(1.15); }
-  100% { transform: rotate(360deg) scale(1); }
-}
-
-@keyframes gridMove {
-  0% { background-position: 0 0, 0 0, 0 0; }
-  100% { background-position: 50px 50px, 50px 50px, 0 0; }
-}
-
-@keyframes scanSweep {
-  0% { background-position-y: 0, 0, -300px; }
-  100% { background-position-y: 0, 0, 100vh; }
-}
-
-/* Shell & Layout */
-.shell{width:min(1180px,calc(100% - 36px));margin:auto;position:relative;z-index:1}
-
-/* Topbar */
-.topbar{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-bottom: 1px solid rgba(0, 243, 255, 0.2)}
-.brand{
-  color:#fff;
-  text-decoration:none;
-  font-family: 'Orbitron', sans-serif;
-  font-size:22px;
-  font-weight:900;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-.brand span{
-  color: var(--neon-cyan);
-  margin-right:10px;
-  text-shadow:0 0 12px var(--neon-cyan), 0 0 24px var(--neon-cyan);
-}
-nav{display:flex;gap:28px;align-items:center;font-size:15px;font-weight:600;letter-spacing:1px;text-transform:uppercase}
-nav a{color:#a2c7e5;text-decoration:none;transition:0.3s}
-nav a:hover{color:var(--neon-cyan);text-shadow: 0 0 8px var(--neon-cyan)}
-.cta{
-  border:1px solid var(--neon-cyan);
-  border-radius:4px;
-  padding:10px 24px;
-  background: var(--hud-blue);
-  color: var(--neon-cyan) !important;
-  box-shadow:0 0 15px rgba(0, 243, 255, 0.2);
-  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
-  transition: 0.3s ease;
-}
-.cta:hover{
-  background: var(--neon-cyan);
-  color: #000 !important;
-  box-shadow: 0 0 25px var(--neon-cyan);
-}
-
-/* Hero Section */
-.hero{min-height:440px;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:60px 0 30px}
-.eyebrow{
-  display:inline-block;
-  border:1px solid var(--neon-cyan);
-  border-left: 4px solid var(--neon-cyan);
-  padding:6px 16px;
-  color:var(--neon-cyan);
-  font-family: 'Orbitron', sans-serif;
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:3px;
-  background:rgba(0, 243, 255, 0.08);
-  box-shadow: 0 0 15px rgba(0, 243, 255, 0.15);
-}
-h1{
-  font-family: 'Orbitron', sans-serif;
-  font-size:clamp(2.8rem,5vw,4.5rem);
-  line-height:1.05;
-  letter-spacing:-1px;
-  margin:20px 0 0;
-  text-transform: uppercase;
-}
-h1 span{
-  color:transparent;
-  background:linear-gradient(90deg, var(--neon-cyan), var(--neon-violet), var(--neon-magenta));
-  background-clip:text;
-  -webkit-background-clip:text;
-  filter: drop-shadow(0 0 15px rgba(0, 243, 255, 0.4));
-}
-.hero p{color:#8eaed0;line-height:1.6;font-size:18px;margin:25px 0}
-
-/* Search Bar */
-.search{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  max-width:570px;
-  border:1px solid var(--glass-border);
-  border-radius:6px;
-  padding:14px 18px;
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-  transition: 0.3s;
-}
-.search:focus-within {
-  border-color: var(--neon-cyan);
-  box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
-}
-.search input{
-  flex:1;
-  min-width:0;
-  background:transparent;
-  border:0;
-  outline:0;
-  color:#fff;
-  font-family: 'Rajdhani', sans-serif;
-  font-size:16px;
-}
-.search input::placeholder{color:#57799d}
-.search span {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 11px;
-  color: var(--neon-cyan);
-  border: 1px solid rgba(0, 243, 255, 0.4);
-  padding: 2px 6px;
-  border-radius: 3px;
-}
-
-/* Hero HUD Interactive Art */
-.hero-art{
-  min-height:360px;
-  background: radial-gradient(circle, var(--hud-blue) 0%, transparent 70%);
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.hero-art::before {
-  content: "HUD // SYSTEM ONLINE";
-  font-family: 'Orbitron', sans-serif;
-  font-size: 11px;
-  letter-spacing: 4px;
-  color: var(--neon-cyan);
-  border: 1px dashed var(--neon-cyan);
-  padding: 50px;
-  border-radius: 50%;
-  box-shadow: 0 0 35px var(--hud-blue), inset 0 0 35px var(--hud-blue);
-  animation: spin 25s linear infinite;
-}
-
-@keyframes spin { 100% { transform: rotate(360deg); } }
-
-/* Filters */
-.filters{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 40px}
-.filter{
-  border:1px solid rgba(0, 243, 255, 0.25);
-  border-radius:4px;
-  padding:8px 20px;
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  color:#8eaed0;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 12px;
-  letter-spacing: 1px;
-  cursor:pointer;
-  transition: 0.3s;
-}
-.filter.active, .filter:hover{
-  border-color:var(--neon-cyan);
-  background:var(--hud-blue);
-  color:var(--neon-cyan);
-  box-shadow:0 0 15px rgba(0, 243, 255, 0.3);
-}
-
-/* Content Sections & Glassmorphic Cards */
-section{margin:45px 0}
-.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:24px;border-left: 3px solid var(--neon-cyan);padding-left: 15px}
-.section-title{display:flex;gap:14px;align-items:center}
-.section-icon{font-size:28px;color:var(--neon-cyan);text-shadow:0 0 12px var(--neon-cyan)}
-h2{margin:0;font-family: 'Orbitron', sans-serif;font-size:24px;letter-spacing: 1px;text-transform: uppercase;}
-.section-head p{margin:4px 0 0;color:#6b8eb3;font-size:14px}
-.view-all{color:var(--neon-cyan);text-decoration:none;font-family:'Orbitron', sans-serif;font-size:12px;letter-spacing: 1px}
-.view-all:hover {text-shadow: 0 0 8px var(--neon-cyan)}
-
-.cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
-.card{
-  display:flex;
-  flex-direction:column;
-  min-height:260px;
-  padding:22px;
-  border:1px solid var(--glass-border);
-  border-radius:8px;
-  color:#fff;
-  text-decoration:none;
-  background: var(--glass-bg);
-  backdrop-filter:blur(20px);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 2px;
-  background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
-  transform: translateX(-100%);
-  transition: 0.5s;
-}
-.card:hover::before { transform: translateX(100%); }
-.card:hover{
-  transform:translateY(-6px);
-  border-color:var(--neon-cyan);
-  box-shadow:0 12px 35px -10px rgba(0, 243, 255, 0.4);
-}
-
-.icon{
-  width:48px;
-  height:48px;
-  display:grid;
-  place-items:center;
-  border:1px solid var(--neon-cyan);
-  border-radius:6px;
-  background:var(--hud-blue);
-  font-size:22px;
-  margin-bottom:18px;
-  box-shadow: 0 0 12px rgba(0, 243, 255, 0.2);
-}
-.card h3{margin:0 0 10px;font-family:'Orbitron', sans-serif;font-size:15px;letter-spacing:0.5px}
-.card p{margin:0;color:#92b2d4;font-size:13px;line-height:1.5;flex:1}
-
-.button{
-  margin-top:20px;
-  padding:10px 12px;
-  text-align:center;
-  border:1px solid var(--neon-cyan);
-  border-radius:4px;
-  font-family: 'Orbitron', sans-serif;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing: 1px;
-  background:var(--hud-blue);
-  color: var(--neon-cyan);
-  transition: 0.3s;
-}
-.card:hover .button:not(.coming) {
-  background: var(--neon-cyan);
-  color: #000;
-  box-shadow: 0 0 15px var(--neon-cyan);
-}
-.coming{
-  color:#5a7b9e;
-  border-color:rgba(90, 123, 158, 0.3);
-  background:rgba(255,255,255,0.02);
-}
-
-/* Footer Banner */
-.more{
-  width:min(450px,100%);
-  margin:40px auto 0;
-  padding:20px 24px;
-  display:flex;
-  gap:18px;
-  align-items:center;
-  border:1px solid var(--neon-magenta);
-  border-radius:6px;
-  background: rgba(255, 0, 127, 0.08);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 0 25px rgba(255, 0, 127, 0.15);
-}
-.more strong{display:block;font-family:'Orbitron', sans-serif;font-size:14px;color: var(--neon-magenta)}
-.more small{display:block;color:#a2c7e5;font-size:12px;margin-top:4px}
-
-footer{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  padding:40px 0 30px;
-  margin-top:60px;
-  border-top:1px solid rgba(0, 243, 255, 0.2);
-  color:#5a7b9e;
-  font-size:13px;
-}
-.footer-links{display:flex;gap:20px;font-family:'Orbitron', sans-serif;font-size:11px}
-.footer-links a{color:inherit;text-decoration:none;transition:0.3s}
-.footer-links a:hover{color:var(--neon-cyan)}
-
-@media(max-width:1050px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:720px){.hero{grid-template-columns:1fr;padding-top:25px}.hero-art{display:none}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}nav{gap:12px;font-size:12px}}
-@media(max-width:470px){.shell{width:calc(100% - 24px)}nav a:not(.cta){display:none}.cards{grid-template-columns:1fr}footer{flex-direction:column}h1{letter-spacing:0px}}
-</style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e0f2fe;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #7dd3fc;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #38bdf8;
+        }
+    </style>
 </head>
-<body>
+<body class="relative antialiased selection:bg-sky-200 selection:text-sky-900 overflow-x-hidden">
 
-<div class="stars-overlay"></div>
+    <!-- Ambient Glowing Background Bubbles & Grid -->
+    <div class="ambient-glow w-[600px] h-[600px] bg-sky-300/40 -top-40 -left-20"></div>
+    <div class="ambient-glow w-[500px] h-[500px] bg-cyan-200/50 top-1/3 -right-20"></div>
+    <div class="ambient-glow w-[700px] h-[700px] bg-blue-200/30 bottom-0 left-1/4"></div>
+    <div class="fixed inset-0 bg-[radial-gradient(#0ea5e9_0.8px,transparent_0.8px)] [background-size:24px_24px] opacity-[0.12] pointer-events-none z-0"></div>
 
-<div class="shell">
-<header class="topbar">
-<a class="brand" href="#"><span>&lt;/&gt;</span>Techsavyy</a>
-<nav><a href="#apps">Apps</a><a href="#about">About</a><a href="#contact">Contact</a><a class="cta" href="#apps">Explore</a></nav>
-</header>
-<main>
-<section class="hero" id="about">
-<div>
-  <div class="eyebrow">NEXT-GEN APPS // V2.0</div>
-  <h1>Small apps.<br><span>Useful ideas.</span></h1>
-  <p>Engineered to learn, play, create, and optimize your stream.<br>Select a hyper-tool below or launch into the unknown.</p>
-  <label class="search">⌕<input id="search" type="search" placeholder="Search parameters..."><span>⌘ K</span></label>
-</div>
-<div class="hero-art"></div>
-</section>
-<div class="filters">
-  <button class="filter active" data-filter="all">All Modules</button>
-  <button class="filter" data-filter="kids">Kids</button>
-  <button class="filter" data-filter="tools">Tools</button>
-  <button class="filter" data-filter="productivity">Productivity</button>
-  <button class="filter" data-filter="fun">Fun</button>
-  <button class="filter" data-filter="learning">Learning</button>
-</div>
-<section id="apps">
-  <div class="section-head">
-    <div class="section-title">
-      <div class="section-icon">◈</div>
-      <div><h2>Kids Node</h2><p>Interactive neural development and cognitive play.</p></div>
+    <div class="relative z-10 flex flex-col min-h-screen">
+
+        <!-- Navigation Header -->
+        <header class="sticky top-0 z-50 px-4 sm:px-8 py-4">
+            <nav class="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3.5 flex items-center justify-between">
+                <!-- Brand Logo: </> Techsavyy -->
+                <a href="#" class="flex items-center space-x-2.5 font-mono text-xl font-bold tracking-tight text-slate-900 hover:opacity-90 transition">
+                    <span class="text-sky-600 bg-sky-100/80 px-2.5 py-1 rounded-xl border border-sky-200 shadow-xs font-extrabold">&lt;/&gt;</span>
+                    <span class="font-display font-extrabold tracking-tight">Techsavyy</span>
+                </a>
+
+                <!-- Nav Links: Apps, About, Contact -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                    <a href="#apps-section" class="hover:text-sky-600 transition-colors">Apps</a>
+                    <a href="#about" class="hover:text-sky-600 transition-colors">About</a>
+                    <a href="#contact" class="hover:text-sky-600 transition-colors">Contact</a>
+                </div>
+
+                <!-- CTA: Explore -->
+                <a href="#apps-section" class="glass-button text-sky-700 font-semibold px-5 py-2.5 rounded-xl text-sm flex items-center space-x-2 hover:text-sky-900">
+                    <span>Explore</span>
+                    <svg class="w-4 h-4 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                    </svg>
+                </a>
+            </nav>
+        </header>
+
+        <!-- Main Hero Section -->
+        <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 w-full">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-16">
+                <!-- Hero Left Column Text -->
+                <div class="lg:col-span-7 text-left space-y-6">
+                    <!-- Eyebrow: SMALL APPS. BIGGER IDEAS. -->
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full glass-panel text-xs font-mono font-bold tracking-wider text-sky-700 uppercase border-sky-200">
+                        <span class="w-2 h-2 rounded-full bg-sky-500 animate-ping"></span>
+                        <span>SMALL APPS. BIGGER IDEAS.</span>
+                    </div>
+
+                    <!-- H1: Small apps. Useful ideas. -->
+                    <h1 class="font-display text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
+                        Small apps. <br/>
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-600 via-cyan-500 to-blue-600">
+                            Useful ideas.
+                        </span>
+                    </h1>
+
+                    <!-- Paragraph -->
+                    <p class="text-lg text-slate-600 leading-relaxed max-w-xl">
+                        Apps to learn, play, create and get things done. Pick something useful — or just see what happens.
+                    </p>
+
+                    <!-- Search Input & Keyboard Shortcut -->
+                    <div class="relative max-w-md pt-2">
+                        <div class="relative flex items-center">
+                            <svg class="w-5 h-5 absolute left-4 text-sky-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                            <input 
+                                id="app-search" 
+                                type="text" 
+                                placeholder="Search apps..." 
+                                class="w-full pl-12 pr-16 py-3.5 bg-white/80 backdrop-blur-md rounded-2xl border border-sky-200/80 text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent shadow-sm transition-all"
+                            />
+                            <div class="absolute right-3 bg-sky-100/80 border border-sky-200 text-sky-700 font-mono text-[11px] font-bold px-2 py-1 rounded-lg pointer-events-none">
+                                ⌘ K
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Column: High-Tech Canvas Visualizer -->
+                <div class="lg:col-span-5">
+                    <div class="glass-panel rounded-3xl p-6 relative overflow-hidden border border-sky-200/80 shadow-xl">
+                        <div class="flex items-center justify-between pb-4 border-b border-sky-100 mb-4">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-2.5 h-2.5 rounded-full bg-rose-400"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
+                                <span class="font-mono text-xs text-slate-500 pl-2">quantum_mesh.engine</span>
+                            </div>
+                            <span id="canvas-status" class="font-mono text-[11px] font-bold text-sky-600 bg-sky-100/70 px-2.5 py-0.5 rounded-md">100% Synced</span>
+                        </div>
+
+                        <!-- Canvas Container -->
+                        <div class="relative w-full h-64 rounded-2xl overflow-hidden bg-gradient-to-b from-sky-900/5 to-sky-50/50 border border-sky-100">
+                            <canvas id="hero-canvas" class="w-full h-full cursor-crosshair"></canvas>
+                            
+                            <!-- Interactive overlay badge -->
+                            <div class="absolute bottom-3 right-3 pointer-events-none text-[10px] font-mono text-sky-700 bg-white/90 backdrop-blur-md px-2 py-1 rounded-lg border border-sky-200 shadow-2xs">
+                                Move Cursor • Interactive Mesh
+                            </div>
+                        </div>
+
+                        <div class="mt-4 flex items-center justify-between text-xs font-mono text-slate-500">
+                            <span>Nodes Active: <strong class="text-sky-600">32</strong></span>
+                            <span>Latency: <strong class="text-sky-600">0.4ms</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Buttons Section -->
+            <div id="apps-section" class="scroll-mt-24 mb-10">
+                <div class="flex items-center space-x-2 overflow-x-auto pb-2 scrollbar-none">
+                    <button class="filter-btn active px-4 py-2 rounded-xl text-xs font-bold font-mono tracking-wide transition-all bg-sky-600 text-white shadow-md shadow-sky-500/20" data-filter="all">All</button>
+                    <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold font-mono tracking-wide transition-all glass-button text-slate-600 hover:text-sky-600" data-filter="kids">Kids</button>
+                    <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold font-mono tracking-wide transition-all glass-button text-slate-600 hover:text-sky-600" data-filter="tools">Tools</button>
+                    <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold font-mono tracking-wide transition-all glass-button text-slate-600 hover:text-sky-600" data-filter="productivity">Productivity</button>
+                    <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold font-mono tracking-wide transition-all glass-button text-slate-600 hover:text-sky-600" data-filter="fun">Fun</button>
+                    <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold font-mono tracking-wide transition-all glass-button text-slate-600 hover:text-sky-600" data-filter="learning">Learning</button>
+                </div>
+            </div>
+
+            <!-- Section 1: Kids -->
+            <section class="app-group mb-16" data-category="kids">
+                <div class="flex items-end justify-between mb-6 pb-2 border-b border-sky-200/60">
+                    <div>
+                        <h2 class="font-display font-bold text-2xl text-slate-900 tracking-tight">Kids</h2>
+                        <p class="text-sm text-slate-500 mt-1">Learn, play, explore.</p>
+                    </div>
+                    <a href="#" class="text-xs font-bold font-mono text-sky-600 hover:text-sky-800 transition-colors">View all →</a>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Kids Card 1: Learning -->
+                    <div class="app-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-title="learning" data-tags="kids learning">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-sky-100 border border-sky-200 flex items-center justify-center text-sky-600 mb-4 font-bold text-lg">
+                                🎓
+                            </div>
+                            <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Learning</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                Grade-based learning made simple, interactive, and a little more fun.
+                            </p>
+                        </div>
+                        <a href="https://learn.techsavyy.com" target="_blank" class="glass-button text-center w-full py-2.5 px-4 rounded-xl text-xs font-bold text-sky-700 hover:bg-sky-600 hover:text-white transition-all shadow-2xs">
+                            Start Learning →
+                        </a>
+                    </div>
+
+                    <!-- Kids Card 2: Bedtime Stories -->
+                    <div class="app-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-title="bedtime stories" data-tags="kids stories learning">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-sky-100 border border-sky-200 flex items-center justify-center text-sky-600 mb-4 font-bold text-lg">
+                                📖
+                            </div>
+                            <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Bedtime Stories</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                Short stories for curious minds, quiet nights, and one more story before bed.
+                            </p>
+                        </div>
+                        <a href="https://stories.techsavyy.com" target="_blank" class="glass-button text-center w-full py-2.5 px-4 rounded-xl text-xs font-bold text-sky-700 hover:bg-sky-600 hover:text-white transition-all shadow-2xs">
+                            Read a Story →
+                        </a>
+                    </div>
+
+                    <!-- Kids Card 3: GK Quiz -->
+                    <div class="app-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-title="gk quiz" data-tags="kids learning fun">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-500 mb-4 font-bold text-lg">
+                                💡
+                            </div>
+                            <h3 class="font-display font-bold text-lg text-slate-900 mb-2">GK Quiz</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                Quick general-knowledge quizzes covering India, the world, science, history, and more.
+                            </p>
+                        </div>
+                        <button disabled class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-slate-100 border border-slate-200 text-slate-400 cursor-not-allowed text-center">
+                            Coming Soon
+                        </button>
+                    </div>
+
+                    <!-- Kids Card 4: IQ & Brain Games -->
+                    <div class="app-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-title="iq & brain games" data-tags="kids fun learning">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-500 mb-4 font-bold text-lg">
+                                🧠
+                            </div>
+                            <h3 class="font-display font-bold text-lg text-slate-900 mb-2">IQ & Brain Games</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                Logic, patterns, memory, and reasoning challenges for growing minds.
+                            </p>
+                        </div>
+                        <button disabled class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-slate-100 border border-slate-200 text-slate-400 cursor-not-allowed text-center">
+                            Coming Soon
+                        </button>
+                    </div>
+
+                    <!-- Kids Card 5: Chess Puzzles -->
+                    <div class="app-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-title="chess puzzles" data-tags="kids fun learning">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-500 mb-4 font-bold text-lg">
+                                ♟️
+                            </div>
+                            <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Chess Puzzles</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                Practice tactics, solve puzzles, and sharpen your chess thinking one move at a time.
+                            </p>
+                        </div>
+                        <button disabled class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-slate-100 border border-slate-200 text-slate-400 cursor-not-allowed text-center">
+                            Coming Soon
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Tools -->
+            <section class="app-group mb-16" data-category="tools">
+                <div class="flex items-end justify-between mb-6 pb-2 border-b border-sky-200/60">
+                    <div>
+                        <h2 class="font-display font-bold text-2xl text-slate-900 tracking-tight">Tools</h2>
+                        <p class="text-sm text-slate-500 mt-1">Simple tools for everyday problems.</p>
+                    </div>
+                    <a href="#" class="text-xs font-bold font-mono text-sky-600 hover:text-sky-800 transition-colors">View all →</a>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Tools Card 1: Whiteboard -->
+                    <div class="app-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-title="whiteboard" data-tags="tools productivity">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-sky-100 border border-sky-200 flex items-center justify-center text-sky-600 mb-4 font-bold text-lg">
+                                🎨
+                            </div>
+                            <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Whiteboard</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                A simple digital whiteboard for explaining ideas, sketching, and teaching.
+                            </p>
+                        </div>
+                        <a href="https://whiteboard.techsavyy.com" target="_blank" class="glass-button text-center w-full py-2.5 px-4 rounded-xl text-xs font-bold text-sky-700 hover:bg-sky-600 hover:text-white transition-all shadow-2xs">
+                            Open Whiteboard →
+                        </a>
+                    </div>
+
+                    <!-- Tools Card 2: WFO / WFH Tracker -->
+                    <div class="app-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-title="wfo / wfh tracker" data-tags="tools productivity">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-sky-100 border border-sky-200 flex items-center justify-center text-sky-600 mb-4 font-bold text-lg">
+                                🏢
+                            </div>
+                            <h3 class="font-display font-bold text-lg text-slate-900 mb-2">WFO / WFH Tracker</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                Track office and remote working schedules with ease.
+                            </p>
+                        </div>
+                        <a href="https://wfo.techsavyy.com" target="_blank" class="glass-button text-center w-full py-2.5 px-4 rounded-xl text-xs font-bold text-sky-700 hover:bg-sky-600 hover:text-white transition-all shadow-2xs">
+                            Open Tracker →
+                        </a>
+                    </div>
+
+                    <!-- Tools Card 3: NeoLedger -->
+                    <div class="app-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-title="neoledger" data-tags="tools productivity">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-sky-100 border border-sky-200 flex items-center justify-center text-sky-600 mb-4 font-bold text-lg">
+                                📊
+                            </div>
+                            <h3 class="font-display font-bold text-lg text-slate-900 mb-2">NeoLedger</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                Visualize and understand your Kotak Neo trading ledger.
+                            </p>
+                        </div>
+                        <a href="https://neoledger.techsavyy.com" target="_blank" class="glass-button text-center w-full py-2.5 px-4 rounded-xl text-xs font-bold text-sky-700 hover:bg-sky-600 hover:text-white transition-all shadow-2xs">
+                            Open NeoLedger →
+                        </a>
+                    </div>
+
+                    <!-- Tools Card 4: Beat the Boss -->
+                    <div class="app-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-title="beat the boss" data-tags="tools fun">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-sky-100 border border-sky-200 flex items-center justify-center text-sky-600 mb-4 font-bold text-lg">
+                                🎮
+                            </div>
+                            <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Beat the Boss</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                A fun gaming experience where you take on the boss.
+                            </p>
+                        </div>
+                        <a href="https://boss.techsavyy.com" target="_blank" class="glass-button text-center w-full py-2.5 px-4 rounded-xl text-xs font-bold text-sky-700 hover:bg-sky-600 hover:text-white transition-all shadow-2xs">
+                            Play Now →
+                        </a>
+                    </div>
+
+                    <!-- Tools Card 5: Text Tools -->
+                    <div class="app-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-title="text tools" data-tags="tools productivity">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-500 mb-4 font-bold text-lg">
+                                ✍️
+                            </div>
+                            <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Text Tools</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                Clean, transform, compare, and format text in a few clicks.
+                            </p>
+                        </div>
+                        <button disabled class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-slate-100 border border-slate-200 text-slate-400 cursor-not-allowed text-center">
+                            Coming Soon
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer Banner -->
+            <div class="glass-panel rounded-2xl p-6 text-center max-w-3xl mx-auto my-12 border-sky-200">
+                <div class="text-3xl mb-2">🚀</div>
+                <p class="font-display font-bold text-lg text-slate-900">More apps are coming...</p>
+                <p class="text-xs text-slate-500 mt-1 font-mono">Because apparently one app was never going to be enough.</p>
+            </div>
+
+        </main>
+
+        <!-- Main Footer -->
+        <footer class="mt-auto border-t border-sky-200/60 glass-panel py-8 relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <div class="flex items-center space-x-2">
+                    <span class="font-bold text-slate-800 font-mono text-sm">⌂ Techsavyy</span>
+                    <span>/</span>
+                    <span class="text-slate-600">Built with curiosity.</span>
+                </div>
+
+                <div class="flex items-center space-x-6 font-semibold text-slate-600">
+                    <a href="#apps-section" class="hover:text-sky-600 transition">Apps</a>
+                    <a href="#about" id="about" class="hover:text-sky-600 transition">About</a>
+                    <a href="#contact" id="contact" class="hover:text-sky-600 transition">Contact</a>
+                    <a href="https://github.com/SriniArch" target="_blank" class="hover:text-sky-600 transition flex items-center space-x-1">
+                        <span>GitHub</span>
+                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
     </div>
-    <a class="view-all" href="#apps">View all →</a>
-  </div>
-  <div class="cards">
-    <a class="card" data-category="kids learning" href="https://learn.techsavyy.com" target="_blank"><div class="icon">📖</div><h3>Learning</h3><p>Grade-based learning optimized through simple, interactive digital modules.</p><span class="button">Initialize →</span></a>
-    <a class="card" data-category="kids learning" href="https://stories.techsavyy.com" target="_blank"><div class="icon">☾</div><h3>Bedtime Stories</h3><p>Synthesized narrative sequences designed for evening rest protocols.</p><span class="button">Access Uplink →</span></a>
-    <div class="card" data-category="kids learning"><div class="icon">🧠</div><h3>GK Quiz</h3><p>Rapid-fire knowledge verification spanning planetary science and history.</p><span class="button coming">System Offline</span></div>
-    <div class="card" data-category="kids fun"><div class="icon">✣</div><h3>IQ Matrix</h3><p>Logic, pattern recognition, and spatial reasoning acceleration engine.</p><span class="button coming">System Offline</span></div>
-    <div class="card" data-category="kids fun"><div class="icon">♟</div><h3>Chess Tactics</h3><p>Tactical battle simulations to refine strategic cognitive pathways.</p><span class="button coming">System Offline</span></div>
-  </div>
-</section>
-<section>
-  <div class="section-head">
-    <div class="section-title">
-      <div class="section-icon">⚙</div>
-      <div><h2>Utility Matrix</h2><p>Micro-utilities built for high-efficiency operations.</p></div>
-    </div>
-    <a class="view-all" href="#apps">View all →</a>
-  </div>
-  <div class="cards">
-    <a class="card" data-category="tools productivity" href="https://whiteboard.techsavyy.com" target="_blank"><div class="icon">▣</div><h3>Whiteboard</h3><p>Zero-latency vector canvas for sketching visual concepts and instruction.</p><span class="button">Launch Canvas →</span></a>
-    <a class="card" data-category="tools productivity" href="https://wfo.techsavyy.com" target="_blank"><div class="icon">▤</div><h3>WFO / WFH Tracker</h3><p>Hybrid workforce coordinate and telemetry tracking suite.</p><span class="button">Launch Tracker →</span></a>
-    <a class="card" data-category="tools productivity" href="https://neoledger.techsavyy.com" target="_blank"><div class="icon">▦</div><h3>NeoLedger</h3><p>Data visualization engine for Kotak Neo financial ledgers.</p><span class="button">Launch Ledger →</span></a>
-    <a class="card" data-category="tools fun" href="https://boss.techsavyy.com" target="_blank"><div class="icon">🎮</div><h3>Beat the Boss</h3><p>Combat simulation training against higher-tier entity adversaries.</p><span class="button">Engage Target →</span></a>
-    <div class="card" data-category="tools productivity"><div class="icon">Tt</div><h3>Text Processor</h3><p>Sanitize, transform, compare, and re-encode text streams instantly.</p><span class="button coming">System Offline</span></div>
-  </div>
-</section>
-<div class="more">⚡<div><strong>Expanding Neural Network...</strong><small>Additional modules actively compiling into the core system.</small></div></div>
-</main>
-<footer id="contact">
-  <div><strong>⌂ Techsavyy Hub</strong><br>Engineered with infinite curiosity.</div>
-  <div class="footer-links"><a href="#apps">Apps</a><a href="#about">About</a><a href="#contact">Contact</a><a href="https://github.com/SriniArch" target="_blank">GitHub</a></div>
-</footer>
-</div>
-<script>
-const input=document.querySelector('#search'),cards=[...document.querySelectorAll('.card')],buttons=[...document.querySelectorAll('.filter')];let active='all';
-function update(){const q=input.value.toLowerCase().trim();cards.forEach(c=>c.style.display=c.textContent.toLowerCase().includes(q)&&(active==='all'||(c.dataset.category||'').includes(active))?'flex':'none')}
-input.addEventListener('input',update);buttons.forEach(b=>b.addEventListener('click',()=>{active=b.dataset.filter;buttons.forEach(x=>x.classList.remove('active'));b.classList.add('active');update()}));document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();input.focus()}});
-</script>
+
+    <!-- JavaScript Logic & Interactive Canvas -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            /* 1. Interactive Hero Quantum Canvas Engine */
+            const canvas = document.getElementById('hero-canvas');
+            const ctx = canvas.getContext('2d');
+            let width, height;
+
+            function resizeCanvas() {
+                const rect = canvas.getBoundingClientRect();
+                width = rect.width;
+                height = rect.height;
+                canvas.width = width * window.devicePixelRatio;
+                canvas.height = height * window.devicePixelRatio;
+                ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+            }
+
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            const mouse = { x: null, y: null, radius: 80 };
+            canvas.addEventListener('mousemove', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                mouse.x = e.clientX - rect.left;
+                mouse.y = e.clientY - rect.top;
+            });
+            canvas.addEventListener('mouseleave', () => {
+                mouse.x = null;
+                mouse.y = null;
+            });
+
+            const particles = [];
+            const numParticles = 32;
+
+            class NodeParticle {
+                constructor() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * height;
+                    this.vx = (Math.random() - 0.5) * 0.8;
+                    this.vy = (Math.random() - 0.5) * 0.8;
+                    this.radius = Math.random() * 2 + 1.5;
+                }
+
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    if (this.x < 0 || this.x > width) this.vx *= -1;
+                    if (this.y < 0 || this.y > height) this.vy *= -1;
+
+                    if (mouse.x !== null && mouse.y !== null) {
+                        const dx = mouse.x - this.x;
+                        const dy = mouse.y - this.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < mouse.radius) {
+                            const force = (mouse.radius - dist) / mouse.radius;
+                            this.x -= (dx / dist) * force * 2.5;
+                            this.y -= (dy / dist) * force * 2.5;
+                        }
+                    }
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = '#0284c7';
+                    ctx.shadowColor = '#38bdf8';
+                    ctx.shadowBlur = 6;
+                    ctx.fill();
+                    ctx.shadowBlur = 0;
+                }
+            }
+
+            for (let i = 0; i < numParticles; i++) {
+                particles.push(new NodeParticle());
+            }
+
+            function animateCanvas() {
+                ctx.clearRect(0, 0, width, height);
+
+                // Draw connecting mesh lines
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < 70) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(14, 165, 233, ${0.4 * (1 - dist / 70)})`;
+                            ctx.lineWidth = 1;
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+
+                requestAnimationFrame(animateCanvas);
+            }
+
+            animateCanvas();
+
+
+            /* 2. Filter & Search JS Functionality */
+            const searchInput = document.getElementById('app-search');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const appCards = document.querySelectorAll('.app-card');
+            const appGroups = document.querySelectorAll('.app-group');
+
+            let activeFilter = 'all';
+
+            function filterApps() {
+                const query = searchInput.value.toLowerCase().trim();
+
+                appCards.forEach(card => {
+                    const title = card.getAttribute('data-title').toLowerCase();
+                    const tags = card.getAttribute('data-tags').toLowerCase();
+                    
+                    const matchesFilter = activeFilter === 'all' || tags.includes(activeFilter);
+                    const matchesSearch = title.includes(query) || tags.includes(query);
+
+                    if (matchesFilter && matchesSearch) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Hide empty category headers if no visible cards
+                appGroups.forEach(group => {
+                    const visibleCards = group.querySelectorAll('.app-card[style="display: flex;"]');
+                    if (visibleCards.length === 0 && (query !== '' || activeFilter !== 'all')) {
+                        group.style.display = 'none';
+                    } else {
+                        group.style.display = 'block';
+                    }
+                });
+            }
+
+            // Filter button click handlers
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-sky-600', 'text-white', 'shadow-md', 'shadow-sky-500/20');
+                        b.classList.add('glass-button', 'text-slate-600');
+                    });
+                    
+                    btn.classList.remove('glass-button', 'text-slate-600');
+                    btn.classList.add('bg-sky-600', 'text-white', 'shadow-md', 'shadow-sky-500/20');
+
+                    activeFilter = btn.getAttribute('data-filter');
+                    filterApps();
+                });
+            });
+
+            // Live Search input event
+            searchInput.addEventListener('input', filterApps);
+
+            // Shortcut listener: Command/Ctrl + K to focus search
+            window.addEventListener('keydown', (e) => {
+                if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+                    e.preventDefault();
+                    searchInput.focus();
+                }
+            });
+
+        });
+    </script>
 </body>
 </html>
