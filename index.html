@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,20 +36,6 @@
   }
 
   a { color: inherit; text-decoration: none; }
-
-  #fireworks {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  main, footer {
-    position: relative;
-    z-index: 1;
-  }
 
   .container {
     width: min(1120px, calc(100% - 36px));
@@ -340,8 +327,6 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
 
-    #fireworks { display: none; }
-
     *, *::before, *::after {
       animation-duration: .01ms !important;
       animation-iteration-count: 1 !important;
@@ -352,8 +337,6 @@
 </head>
 
 <body>
-<canvas id="fireworks" aria-hidden="true"></canvas>
-
 <main>
   <header class="container">
     <div class="badge">
@@ -548,127 +531,6 @@
       card.classList.toggle("hidden", query && !text.includes(query));
     });
   });
-
-  const canvas = document.getElementById("fireworks");
-  const ctx = canvas.getContext("2d");
-
-  let width, height, dpr;
-  let fireworks = [];
-  let sparks = [];
-  let lastLaunch = 0;
-
-  function resize() {
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
-    width = window.innerWidth;
-    height = window.innerHeight;
-
-    canvas.width = width * dpr;
-    canvas.height = height * dpr;
-    canvas.style.width = width + "px";
-    canvas.style.height = height + "px";
-
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  }
-
-  function launch() {
-    fireworks.push({
-      x: Math.random() * width,
-      y: height + 10,
-      targetX: 80 + Math.random() * Math.max(1, width - 160),
-      targetY: 90 + Math.random() * Math.min(height * .42, 360),
-      speed: 5 + Math.random() * 2,
-      hue: Math.floor(Math.random() * 360),
-      trail: []
-    });
-  }
-
-  function explode(x, y, hue) {
-    const count = 55 + Math.floor(Math.random() * 30);
-
-    sparks.push({
-      x, y, vx: 0, vy: 0,
-      life: 16, maxLife: 16, hue
-    });
-
-    for (let i = 0; i < count; i++) {
-      const angle = Math.random() * Math.PI * 2;
-      const speed = 1.5 + Math.random() * 4.2;
-
-      sparks.push({
-        x, y,
-        vx: Math.cos(angle) * speed,
-        vy: Math.sin(angle) * speed,
-        life: 45 + Math.random() * 28,
-        maxLife: 73,
-        hue: hue + (Math.random() * 25 - 12)
-      });
-    }
-  }
-
-  function draw(time) {
-    ctx.clearRect(0, 0, width, height);
-
-    if (time - lastLaunch > 1200 + Math.random() * 1300) {
-      launch();
-      lastLaunch = time;
-    }
-
-    fireworks = fireworks.filter(f => {
-      const dx = f.targetX - f.x;
-      const dy = f.targetY - f.y;
-      const distance = Math.hypot(dx, dy);
-
-      f.trail.push({ x: f.x, y: f.y });
-      if (f.trail.length > 5) f.trail.shift();
-
-      if (distance < f.speed + 2) {
-        explode(f.x, f.y, f.hue);
-        return false;
-      }
-
-      f.x += dx / distance * f.speed;
-      f.y += dy / distance * f.speed;
-
-      ctx.beginPath();
-      ctx.moveTo(f.x, f.y);
-      ctx.lineTo(f.trail[0]?.x ?? f.x, f.trail[0]?.y ?? f.y);
-      ctx.strokeStyle = `hsla(${f.hue}, 100%, 48%, .98)`;
-      ctx.lineWidth = 3;
-      ctx.shadowBlur = 10;
-      ctx.shadowColor = `hsla(${f.hue}, 95%, 55%, .8)`;
-      ctx.stroke();
-      ctx.shadowBlur = 0;
-
-      return true;
-    });
-
-    sparks = sparks.filter(s => {
-      s.x += s.vx;
-      s.y += s.vy;
-      s.vy += .035;
-      s.vx *= .985;
-      s.vy *= .985;
-      s.life--;
-
-      const alpha = Math.max(0, s.life / s.maxLife);
-
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, 2.4, 0, Math.PI * 2);
-      ctx.fillStyle = `hsla(${s.hue}, 100%, 48%, ${alpha * .95})`;
-      ctx.shadowBlur = 12;
-      ctx.shadowColor = `hsla(${s.hue}, 100%, 55%, ${alpha})`;
-      ctx.fill();
-      ctx.shadowBlur = 0;
-
-      return s.life > 0;
-    });
-
-    requestAnimationFrame(draw);
-  }
-
-  resize();
-  window.addEventListener("resize", resize);
-  requestAnimationFrame(draw);
 })();
 </script>
 
