@@ -3,18 +3,325 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Techsavyy — Small Apps. Useful Ideas.</title>
+<title>Techsavyy — Quantum Nexus & Hyper-Apps</title>
 <link rel="icon" href="/favicon.ico">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#020714;color:#f4f8ff;font-family:Inter,Arial,sans-serif;min-height:100vh}
-body:before{content:"";position:fixed;inset:0;z-index:-2;background:url("a_vibrant_dark_futuristic_neon_ui_website_hero_da.png") center top/cover no-repeat fixed}
-body:after{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,#02071418 0%,#02071422 55%,#020714f2 100%);pointer-events:none}
-.shell{width:min(1180px,calc(100% - 36px));margin:auto}.topbar{display:flex;justify-content:space-between;align-items:center;padding:24px 0}.brand{color:#fff;text-decoration:none;font-size:20px;font-weight:800}.brand span{color:#50eaff;margin-right:10px;text-shadow:0 0 20px #50eaff}nav{display:flex;gap:28px;align-items:center;font-size:13px}nav a{color:#dce8ff;text-decoration:none}nav a:hover{color:#50eaff}.cta{border:1px solid #50eaff;border-radius:999px;padding:10px 20px;background:#398cff35;box-shadow:0 0 24px #398cff35}
-.hero{min-height:440px;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:45px 0 20px}.eyebrow{display:inline-block;border:1px solid #50eaffaa;border-radius:999px;padding:8px 15px;color:#50eaff;font-size:11px;font-weight:800;letter-spacing:2px;background:#50eaff12}h1{font-size:clamp(3rem,6vw,5.2rem);line-height:.98;letter-spacing:-3px;margin:20px 0 0}h1 span{color:transparent;background:linear-gradient(100deg,#50ddff,#9a83ff,#e58bff);background-clip:text;-webkit-background-clip:text}.hero p{color:#b5c8e8;line-height:1.8;font-size:15px;margin:25px 0}.search{display:flex;align-items:center;gap:12px;max-width:570px;border:1px solid #67baff88;border-radius:14px;padding:15px 18px;background:#061a3dcc}.search input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:white;font:inherit;font-size:13px}.search input::placeholder{color:#a9bddf}.hero-art{min-height:360px}
-.filters{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 35px}.filter{border:1px solid #6ab5ff55;border-radius:999px;padding:10px 18px;background:#071a3dcc;color:#dceaff;cursor:pointer}.filter.active,.filter:hover{border-color:#50eaff;background:#398cff44}
-section{margin:38px 0}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px}.section-title{display:flex;gap:14px;align-items:center}.section-icon{font-size:30px;color:#50eaff;text-shadow:0 0 15px #50eaff}h2{margin:0;font-size:25px}.section-head p{margin:7px 0 0;color:#b5c8e8;font-size:12px}.view-all{color:#50eaff;text-decoration:none;font-size:12px}.cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:15px}.card{display:flex;flex-direction:column;min-height:250px;padding:20px;border:1px solid #65c4ff77;border-radius:18px;color:#fff;text-decoration:none;background:linear-gradient(145deg,#153e76cc,#07132fe8);backdrop-filter:blur(12px);transition:.25s}.card:hover{transform:translateY(-7px);border-color:#50eaff;box-shadow:0 12px 35px #258dff38}.icon{width:48px;height:48px;display:grid;place-items:center;border:1px solid #5be7ff99;border-radius:13px;background:#25bfff1c;font-size:25px;margin-bottom:20px}.card h3{margin:0 0 10px;font-size:15px}.card p{margin:0;color:#c0d0ed;font-size:12px;line-height:1.65;flex:1}.button{margin-top:18px;padding:10px 12px;text-align:center;border:1px solid #5abfff99;border-radius:999px;font-size:11px;font-weight:700;background:#1c8fff18}.coming{color:#b7c8e5;border-color:#8da5ca55;background:#6e86aa12}.more{width:min(370px,100%);margin:36px auto 0;padding:18px 22px;display:flex;gap:15px;align-items:center;border:1px solid #5eafff66;border-radius:15px;background:#071a3dcc}.more strong{display:block;font-size:13px}.more small{display:block;color:#b5c8e8;font-size:10px;margin-top:6px}footer{display:flex;justify-content:space-between;gap:20px;padding:48px 0 30px;margin-top:55px;border-top:1px solid #5e9fff2a;color:#91a8d0;font-size:12px}.footer-links{display:flex;gap:20px}.footer-links a{color:inherit;text-decoration:none}
-@media(max-width:1050px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:720px){.hero{grid-template-columns:1fr;padding-top:25px}.hero-art{display:none}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}nav{gap:12px;font-size:11px}}@media(max-width:470px){.shell{width:calc(100% - 24px)}nav a:not(.cta){display:none}.cards{grid-template-columns:1fr}footer{flex-direction:column}h1{letter-spacing:-1px}}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+:root {
+  --neon-cyan: #00f3ff;
+  --neon-magenta: #ff007f;
+  --neon-violet: #8a2be2;
+  --hud-blue: rgba(0, 243, 255, 0.15);
+  --bg-deep: #030712;
+  --glass-bg: rgba(6, 15, 38, 0.55);
+  --glass-border: rgba(0, 243, 255, 0.3);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background: var(--bg-deep);
+  color:#e2f1ff;
+  font-family: 'Rajdhani', sans-serif;
+  min-height:100vh;
+  overflow-x: hidden;
+}
+
+/* Ambient Cyber Grid Background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: 
+    linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+    radial-gradient(circle at 50% 20%, rgba(138, 43, 226, 0.25) 0%, transparent 60%);
+  background-size: 40px 40px, 40px 40px, 100% 100%;
+  animation: gridPulse 10s infinite alternate ease-in-out;
+}
+
+/* Cyber Overlay Light Flare */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 80% 80%, rgba(255, 0, 127, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+@keyframes gridPulse {
+  0% { background-position: 0 0, 0 0, 50% 20%; }
+  100% { background-position: 20px 20px, 20px 20px, 50% 30%; }
+}
+
+.shell{width:min(1180px,calc(100% - 36px));margin:auto}
+
+/* Topbar */
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-bottom: 1px solid rgba(0, 243, 255, 0.15)}
+.brand{
+  color:#fff;
+  text-decoration:none;
+  font-family: 'Orbitron', sans-serif;
+  font-size:22px;
+  font-weight:900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.brand span{
+  color: var(--neon-cyan);
+  margin-right:10px;
+  text-shadow:0 0 12px var(--neon-cyan), 0 0 24px var(--neon-cyan);
+}
+nav{display:flex;gap:28px;align-items:center;font-size:15px;font-weight:600;letter-spacing:1px;text-transform:uppercase}
+nav a{color:#a2c7e5;text-decoration:none;transition:0.3s}
+nav a:hover{color:var(--neon-cyan);text-shadow: 0 0 8px var(--neon-cyan)}
+.cta{
+  border:1px solid var(--neon-cyan);
+  border-radius:4px;
+  padding:10px 24px;
+  background: var(--hud-blue);
+  color: var(--neon-cyan) !important;
+  box-shadow:0 0 15px rgba(0, 243, 255, 0.2);
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+  transition: 0.3s ease;
+}
+.cta:hover{
+  background: var(--neon-cyan);
+  color: #000 !important;
+  box-shadow: 0 0 25px var(--neon-cyan);
+}
+
+/* Hero Section */
+.hero{min-height:440px;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:60px 0 30px}
+.eyebrow{
+  display:inline-block;
+  border:1px solid var(--neon-cyan);
+  border-left: 4px solid var(--neon-cyan);
+  padding:6px 16px;
+  color:var(--neon-cyan);
+  font-family: 'Orbitron', sans-serif;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:3px;
+  background:rgba(0, 243, 255, 0.05);
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.1);
+}
+h1{
+  font-family: 'Orbitron', sans-serif;
+  font-size:clamp(2.8rem,5vw,4.5rem);
+  line-height:1.05;
+  letter-spacing:-1px;
+  margin:20px 0 0;
+  text-transform: uppercase;
+}
+h1 span{
+  color:transparent;
+  background:linear-gradient(90deg, var(--neon-cyan), var(--neon-violet), var(--neon-magenta));
+  background-clip:text;
+  -webkit-background-clip:text;
+  filter: drop-shadow(0 0 15px rgba(0, 243, 255, 0.4));
+}
+.hero p{color:#8eaed0;line-height:1.6;font-size:18px;margin:25px 0}
+
+/* Search Bar */
+.search{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  max-width:570px;
+  border:1px solid var(--glass-border);
+  border-radius:6px;
+  padding:14px 18px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: 0.3s;
+}
+.search:focus-within {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+}
+.search input{
+  flex:1;
+  min-width:0;
+  background:transparent;
+  border:0;
+  outline:0;
+  color:#fff;
+  font-family: 'Rajdhani', sans-serif;
+  font-size:16px;
+}
+.search input::placeholder{color:#57799d}
+.search span {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  color: var(--neon-cyan);
+  border: 1px solid rgba(0, 243, 255, 0.4);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+.hero-art{
+  min-height:360px;
+  background: radial-gradient(circle, var(--hud-blue) 0%, transparent 70%);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-art::before {
+  content: "HUD // SYSTEM READY";
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: var(--neon-cyan);
+  border: 1px solid var(--neon-cyan);
+  padding: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 30px var(--hud-blue), inset 0 0 30px var(--hud-blue);
+  animation: spin 20s linear infinite;
+}
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* Filters */
+.filters{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 40px}
+.filter{
+  border:1px solid rgba(0, 243, 255, 0.2);
+  border-radius:4px;
+  padding:8px 20px;
+  background: var(--glass-bg);
+  color:#8eaed0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor:pointer;
+  transition: 0.3s;
+}
+.filter.active, .filter:hover{
+  border-color:var(--neon-cyan);
+  background:var(--hud-blue);
+  color:var(--neon-cyan);
+  box-shadow:0 0 15px rgba(0, 243, 255, 0.2);
+}
+
+/* Content Sections & Cards */
+section{margin:45px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:24px;border-left: 3px solid var(--neon-cyan);padding-left: 15px}
+.section-title{display:flex;gap:14px;align-items:center}
+.section-icon{font-size:28px;color:var(--neon-cyan);text-shadow:0 0 12px var(--neon-cyan)}
+h2{margin:0;font-family: 'Orbitron', sans-serif;font-size:24px;letter-spacing: 1px;text-transform: uppercase;}
+.section-head p{margin:4px 0 0;color:#6b8eb3;font-size:14px}
+.view-all{color:var(--neon-cyan);text-decoration:none;font-family:'Orbitron', sans-serif;font-size:12px;letter-spacing: 1px}
+.view-all:hover {text-shadow: 0 0 8px var(--neon-cyan)}
+
+.cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
+.card{
+  display:flex;
+  flex-direction:column;
+  min-height:260px;
+  padding:22px;
+  border:1px solid var(--glass-border);
+  border-radius:8px;
+  color:#fff;
+  text-decoration:none;
+  background: var(--glass-bg);
+  backdrop-filter:blur(16px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+.card:hover::before { transform: translateX(100%); }
+.card:hover{
+  transform:translateY(-6px);
+  border-color:var(--neon-cyan);
+  box-shadow:0 10px 30px -10px rgba(0, 243, 255, 0.3);
+}
+
+.icon{
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--neon-cyan);
+  border-radius:6px;
+  background:var(--hud-blue);
+  font-size:22px;
+  margin-bottom:18px;
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.15);
+}
+.card h3{margin:0 0 10px;font-family:'Orbitron', sans-serif;font-size:15px;letter-spacing:0.5px}
+.card p{margin:0;color:#92b2d4;font-size:13px;line-height:1.5;flex:1}
+
+.button{
+  margin-top:20px;
+  padding:10px 12px;
+  text-align:center;
+  border:1px solid var(--neon-cyan);
+  border-radius:4px;
+  font-family: 'Orbitron', sans-serif;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing: 1px;
+  background:var(--hud-blue);
+  color: var(--neon-cyan);
+  transition: 0.3s;
+}
+.card:hover .button:not(.coming) {
+  background: var(--neon-cyan);
+  color: #000;
+  box-shadow: 0 0 15px var(--neon-cyan);
+}
+.coming{
+  color:#5a7b9e;
+  border-color:rgba(90, 123, 158, 0.3);
+  background:rgba(255,255,255,0.02);
+}
+
+/* Dynamic Footer Banner */
+.more{
+  width:min(450px,100%);
+  margin:40px auto 0;
+  padding:20px 24px;
+  display:flex;
+  gap:18px;
+  align-items:center;
+  border:1px solid var(--neon-magenta);
+  border-radius:6px;
+  background: rgba(255, 0, 127, 0.05);
+  box-shadow: 0 0 20px rgba(255, 0, 127, 0.1);
+}
+.more strong{display:block;font-family:'Orbitron', sans-serif;font-size:14px;color: var(--neon-magenta)}
+.more small{display:block;color:#a2c7e5;font-size:12px;margin-top:4px}
+
+footer{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:40px 0 30px;
+  margin-top:60px;
+  border-top:1px solid rgba(0, 243, 255, 0.15);
+  color:#5a7b9e;
+  font-size:13px;
+}
+.footer-links{display:flex;gap:20px;font-family:'Orbitron', sans-serif;font-size:11px}
+.footer-links a{color:inherit;text-decoration:none;transition:0.3s}
+.footer-links a:hover{color:var(--neon-cyan)}
+
+@media(max-width:1050px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:720px){.hero{grid-template-columns:1fr;padding-top:25px}.hero-art{display:none}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}nav{gap:12px;font-size:12px}}
+@media(max-width:470px){.shell{width:calc(100% - 24px)}nav a:not(.cta){display:none}.cards{grid-template-columns:1fr}footer{flex-direction:column}h1{letter-spacing:0px}}
 </style>
 </head>
 <body>
@@ -25,26 +332,60 @@ section{margin:38px 0}.section-head{display:flex;justify-content:space-between;a
 </header>
 <main>
 <section class="hero" id="about">
-<div><div class="eyebrow">SMALL APPS. BIGGER IDEAS.</div><h1>Small apps.<br><span>Useful ideas.</span></h1><p>Apps to learn, play, create and get things done.<br>Pick something useful — or just see what happens.</p><label class="search">⌕<input id="search" type="search" placeholder="Search apps..."><span>⌘ K</span></label></div><div class="hero-art"></div>
+<div>
+  <div class="eyebrow">NEXT-GEN APPS // V2.0</div>
+  <h1>Small apps.<br><span>Useful ideas.</span></h1>
+  <p>Engineered to learn, play, create, and optimize your stream.<br>Select a hyper-tool below or launch into the unknown.</p>
+  <label class="search">⌕<input id="search" type="search" placeholder="Search parameters..."><span>⌘ K</span></label>
+</div>
+<div class="hero-art"></div>
 </section>
-<div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="kids">Kids</button><button class="filter" data-filter="tools">Tools</button><button class="filter" data-filter="productivity">Productivity</button><button class="filter" data-filter="fun">Fun</button><button class="filter" data-filter="learning">Learning</button></div>
-<section id="apps"><div class="section-head"><div class="section-title"><div class="section-icon">◉</div><div><h2>Kids</h2><p>Learn, play, explore.</p></div></div><a class="view-all" href="#apps">View all →</a></div><div class="cards">
-<a class="card" data-category="kids learning" href="https://learn.techsavyy.com" target="_blank"><div class="icon">📖</div><h3>Learning</h3><p>Grade-based learning made simple, interactive, and a little more fun.</p><span class="button">Start Learning →</span></a>
-<a class="card" data-category="kids learning" href="https://stories.techsavyy.com" target="_blank"><div class="icon">☾</div><h3>Bedtime Stories</h3><p>Short stories for curious minds, quiet nights, and one more story before bed.</p><span class="button">Read a Story →</span></a>
-<div class="card" data-category="kids learning"><div class="icon">🧠</div><h3>GK Quiz</h3><p>Quick general-knowledge quizzes covering India, the world, science, history, and more.</p><span class="button coming">Coming Soon</span></div>
-<div class="card" data-category="kids fun"><div class="icon">✣</div><h3>IQ & Brain Games</h3><p>Logic, patterns, memory, and reasoning challenges for growing minds.</p><span class="button coming">Coming Soon</span></div>
-<div class="card" data-category="kids fun"><div class="icon">♟</div><h3>Chess Puzzles</h3><p>Practice tactics, solve puzzles, and sharpen your chess thinking one move at a time.</p><span class="button coming">Coming Soon</span></div>
-</div></section>
-<section><div class="section-head"><div class="section-title"><div class="section-icon">⚙</div><div><h2>Tools</h2><p>Simple tools for everyday problems.</p></div></div><a class="view-all" href="#apps">View all →</a></div><div class="cards">
-<a class="card" data-category="tools productivity" href="https://whiteboard.techsavyy.com" target="_blank"><div class="icon">▣</div><h3>Whiteboard</h3><p>A simple digital whiteboard for explaining ideas, sketching, and teaching.</p><span class="button">Open Whiteboard →</span></a>
-<a class="card" data-category="tools productivity" href="https://wfo.techsavyy.com" target="_blank"><div class="icon">▤</div><h3>WFO / WFH Tracker</h3><p>Track office and remote working schedules with ease.</p><span class="button">Open Tracker →</span></a>
-<a class="card" data-category="tools productivity" href="https://neoledger.techsavyy.com" target="_blank"><div class="icon">▦</div><h3>NeoLedger</h3><p>Visualize and understand your Kotak Neo trading ledger.</p><span class="button">Open NeoLedger →</span></a>
-<a class="card" data-category="tools fun" href="https://boss.techsavyy.com" target="_blank"><div class="icon">🎮</div><h3>Beat the Boss</h3><p>A fun gaming experience where you take on the boss.</p><span class="button">Play Now →</span></a>
-<div class="card" data-category="tools productivity"><div class="icon">Tt</div><h3>Text Tools</h3><p>Clean, transform, compare, and format text in a few clicks.</p><span class="button coming">Coming Soon</span></div>
-</div></section>
-<div class="more">🚀<div><strong>More apps are coming...</strong><small>Because apparently one app was never going to be enough.</small></div></div>
+<div class="filters">
+  <button class="filter active" data-filter="all">All Modules</button>
+  <button class="filter" data-filter="kids">Kids</button>
+  <button class="filter" data-filter="tools">Tools</button>
+  <button class="filter" data-filter="productivity">Productivity</button>
+  <button class="filter" data-filter="fun">Fun</button>
+  <button class="filter" data-filter="learning">Learning</button>
+</div>
+<section id="apps">
+  <div class="section-head">
+    <div class="section-title">
+      <div class="section-icon">◈</div>
+      <div><h2>Kids Node</h2><p>Interactive neural development and cognitive play.</p></div>
+    </div>
+    <a class="view-all" href="#apps">View all →</a>
+  </div>
+  <div class="cards">
+    <a class="card" data-category="kids learning" href="https://learn.techsavyy.com" target="_blank"><div class="icon">📖</div><h3>Learning</h3><p>Grade-based learning optimized through simple, interactive digital modules.</p><span class="button">Initialize →</span></a>
+    <a class="card" data-category="kids learning" href="https://stories.techsavyy.com" target="_blank"><div class="icon">☾</div><h3>Bedtime Stories</h3><p>Synthesized narrative sequences designed for evening rest protocols.</p><span class="button">Access Uplink →</span></a>
+    <div class="card" data-category="kids learning"><div class="icon">🧠</div><h3>GK Quiz</h3><p>Rapid-fire knowledge verification spanning planetary science and history.</p><span class="button coming">System Offline</span></div>
+    <div class="card" data-category="kids fun"><div class="icon">✣</div><h3>IQ Matrix</h3><p>Logic, pattern recognition, and spatial reasoning acceleration engine.</p><span class="button coming">System Offline</span></div>
+    <div class="card" data-category="kids fun"><div class="icon">♟</div><h3>Chess Tactics</h3><p>Tactical battle simulations to refine strategic cognitive pathways.</p><span class="button coming">System Offline</span></div>
+  </div>
+</section>
+<section>
+  <div class="section-head">
+    <div class="section-title">
+      <div class="section-icon">⚙</div>
+      <div><h2>Utility Matrix</h2><p>Micro-utilities built for high-efficiency operations.</p></div>
+    </div>
+    <a class="view-all" href="#apps">View all →</a>
+  </div>
+  <div class="cards">
+    <a class="card" data-category="tools productivity" href="https://whiteboard.techsavyy.com" target="_blank"><div class="icon">▣</div><h3>Whiteboard</h3><p>Zero-latency vector canvas for sketching visual concepts and instruction.</p><span class="button">Launch Canvas →</span></a>
+    <a class="card" data-category="tools productivity" href="https://wfo.techsavyy.com" target="_blank"><div class="icon">▤</div><h3>WFO / WFH Tracker</h3><p>Hybrid workforce coordinate and telemetry tracking suite.</p><span class="button">Launch Tracker →</span></a>
+    <a class="card" data-category="tools productivity" href="https://neoledger.techsavyy.com" target="_blank"><div class="icon">▦</div><h3>NeoLedger</h3><p>Data visualization engine for Kotak Neo financial ledgers.</p><span class="button">Launch Ledger →</span></a>
+    <a class="card" data-category="tools fun" href="https://boss.techsavyy.com" target="_blank"><div class="icon">🎮</div><h3>Beat the Boss</h3><p>Combat simulation training against higher-tier entity adversaries.</p><span class="button">Engage Target →</span></a>
+    <div class="card" data-category="tools productivity"><div class="icon">Tt</div><h3>Text Processor</h3><p>Sanitize, transform, compare, and re-encode text streams instantly.</p><span class="button coming">System Offline</span></div>
+  </div>
+</section>
+<div class="more">⚡<div><strong>Expanding Neural Network...</strong><small>Additional modules actively compiling into the core system.</small></div></div>
 </main>
-<footer id="contact"><div><strong>⌂ Techsavyy</strong><br>Built with curiosity.</div><div class="footer-links"><a href="#apps">Apps</a><a href="#about">About</a><a href="#contact">Contact</a><a href="https://github.com/SriniArch" target="_blank">GitHub</a></div></footer>
+<footer id="contact">
+  <div><strong>⌂ Techsavyy Hub</strong><br>Engineered with infinite curiosity.</div>
+  <div class="footer-links"><a href="#apps">Apps</a><a href="#about">About</a><a href="#contact">Contact</a><a href="https://github.com/SriniArch" target="_blank">GitHub</a></div>
+</footer>
 </div>
 <script>
 const input=document.querySelector('#search'),cards=[...document.querySelectorAll('.card')],buttons=[...document.querySelectorAll('.filter')];let active='all';
