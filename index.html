@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Techsavyy — Small apps. Useful ideas.</title>
+    <title>Techsavyy — Apps I Build for Myself.</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -120,9 +120,246 @@
             background: #38bdf8;
         }
 
-        /* Futuristic HUD Custom Cursor for Visualizer */
-        .hud-cursor-area {
-            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><circle cx='16' cy='16' r='10' fill='none' stroke='%230284c7' stroke-width='1.5' stroke-dasharray='4 2'/><circle cx='16' cy='16' r='3' fill='%230284c7'/><line x1='16' y1='2' x2='16' y2='7' stroke='%230284c7' stroke-width='1.5'/><line x1='16' y1='25' x2='16' y2='30' stroke='%230284c7' stroke-width='1.5'/><line x1='2' y1='16' x2='7' y2='16' stroke='%230284c7' stroke-width='1.5'/><line x1='25' y1='16' x2='30' y2='16' stroke='%230284c7' stroke-width='1.5'/></svg>") 16 16, crosshair;
+        /* Hero: calm Ideas → Experiments → Apps illustration */
+        .ideas-flow-visual {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 11rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0.75rem 0.5rem 0.5rem;
+            overflow: hidden;
+        }
+
+        @media (min-width: 1024px) {
+            .ideas-flow-visual {
+                min-height: 14rem;
+                padding: 1rem 0.75rem 0.65rem;
+            }
+        }
+
+        .flow-pleasant-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(28px);
+            pointer-events: none;
+            opacity: 0.55;
+        }
+
+        .flow-pleasant-orb--left {
+            width: 5.5rem;
+            height: 5.5rem;
+            left: 8%;
+            top: 38%;
+            background: rgba(186, 230, 253, 0.65);
+            animation: pleasant-orb-drift 12s ease-in-out infinite;
+        }
+
+        .flow-pleasant-orb--right {
+            width: 6rem;
+            height: 6rem;
+            right: 6%;
+            top: 30%;
+            background: rgba(165, 243, 252, 0.5);
+            animation: pleasant-orb-drift 14s ease-in-out infinite reverse;
+        }
+
+        @keyframes pleasant-orb-drift {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(6px, -8px) scale(1.06); }
+        }
+
+        .flow-pleasant-paths {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.22;
+        }
+
+        .flow-pleasant-paths path {
+            fill: none;
+            stroke: url(#pleasantFlowGrad);
+            stroke-width: 2;
+            stroke-linecap: round;
+        }
+
+        .flow-pleasant-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+            align-items: center;
+            gap: 0.35rem;
+            flex: 1;
+        }
+
+        .flow-pleasant-col {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .flow-pleasant-col--ideas {
+            align-items: flex-end;
+            padding-right: 0.15rem;
+        }
+
+        .flow-pleasant-col--apps {
+            align-items: flex-start;
+            padding-left: 0.15rem;
+        }
+
+        .pleasant-pill {
+            padding: 0.3rem 0.65rem;
+            font-size: 0.625rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: #0369a1;
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid rgba(186, 230, 253, 0.65);
+            border-radius: 9999px;
+            box-shadow: 0 2px 10px rgba(14, 165, 233, 0.07);
+            white-space: nowrap;
+            animation: pleasant-float 8s ease-in-out infinite;
+            animation-delay: var(--pleasant-delay, 0s);
+        }
+
+        @media (min-width: 640px) {
+            .pleasant-pill {
+                font-size: 0.68rem;
+                padding: 0.35rem 0.75rem;
+            }
+        }
+
+        .pleasant-pill--offset-1 { margin-right: 0.5rem; }
+        .pleasant-pill--offset-2 { margin-right: 0; }
+        .pleasant-pill--offset-3 { margin-right: 0.75rem; }
+
+        .pleasant-spark-wrap {
+            position: relative;
+            width: 3.25rem;
+            height: 3.25rem;
+            flex-shrink: 0;
+        }
+
+        @media (min-width: 640px) {
+            .pleasant-spark-wrap {
+                width: 3.75rem;
+                height: 3.75rem;
+            }
+        }
+
+        .pleasant-spark-glow {
+            position: absolute;
+            inset: -0.65rem;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(125, 211, 252, 0.45) 0%, transparent 72%);
+            animation: pleasant-breathe 6s ease-in-out infinite;
+        }
+
+        .pleasant-spark {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(160deg, #ffffff 0%, #e0f2fe 55%, #bae6fd 100%);
+            border: 1px solid rgba(255, 255, 255, 0.95);
+            box-shadow:
+                0 4px 16px rgba(56, 189, 248, 0.18),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0284c7;
+        }
+
+        .pleasant-spark svg {
+            width: 1.35rem;
+            height: 1.35rem;
+            opacity: 0.9;
+        }
+
+        @media (min-width: 640px) {
+            .pleasant-spark svg {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+
+        .pleasant-apps-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 2.15rem);
+            gap: 0.35rem;
+        }
+
+        @media (min-width: 640px) {
+            .pleasant-apps-grid {
+                grid-template-columns: repeat(2, 2.35rem);
+                gap: 0.4rem;
+            }
+        }
+
+        .pleasant-app {
+            width: 2.15rem;
+            height: 2.15rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(186, 230, 253, 0.55);
+            border-radius: 0.65rem;
+            box-shadow: 0 3px 12px rgba(14, 165, 233, 0.08);
+            animation: pleasant-float 7s ease-in-out infinite;
+            animation-delay: var(--pleasant-delay, 0s);
+        }
+
+        @media (min-width: 640px) {
+            .pleasant-app {
+                width: 2.35rem;
+                height: 2.35rem;
+                font-size: 1rem;
+                border-radius: 0.7rem;
+            }
+        }
+
+        .flow-pleasant-caption {
+            position: relative;
+            z-index: 1;
+            margin-top: 0.65rem;
+            text-align: center;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            color: #94a3b8;
+        }
+
+        .flow-pleasant-caption strong {
+            font-weight: 600;
+            color: #38bdf8;
+        }
+
+        @keyframes pleasant-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+
+        @keyframes pleasant-breathe {
+            0%, 100% { opacity: 0.45; transform: scale(1); }
+            50% { opacity: 0.75; transform: scale(1.06); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .pleasant-pill,
+            .pleasant-app,
+            .pleasant-spark-glow,
+            .flow-pleasant-orb {
+                animation: none !important;
+            }
         }
     </style>
 </head>
@@ -168,23 +405,20 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-16">
                 <!-- Hero Left Column Text -->
                 <div class="lg:col-span-7 text-left space-y-6">
-                    <!-- Eyebrow: SMALL APPS. BIGGER IDEAS. -->
                     <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full glass-panel text-xs font-mono font-bold tracking-wider text-sky-700 uppercase border-sky-200">
                         <span class="w-2 h-2 rounded-full bg-sky-500 animate-ping"></span>
-                        <span>SMALL APPS. BIGGER IDEAS.</span>
+                        <span>BUILT FOR MYSELF · SHARED WITH EVERYONE</span>
                     </div>
 
-                    <!-- H1: Small apps. Useful ideas. -->
-                    <h1 class="font-display text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
-                        Small apps. <br/>
+                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
+                        Apps I Build for Myself.<br/>
                         <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-600 via-cyan-500 to-blue-600">
-                            Useful ideas.
+                            You’re welcome to use them.
                         </span>
                     </h1>
 
-                    <!-- Paragraph -->
                     <p class="text-lg text-slate-600 leading-relaxed max-w-xl">
-                        Apps to learn, play, create and get things done. Pick something useful — or just see what happens.
+                        Small tools, experiments and ideas — built to solve everyday problems and shared here in case they’re useful to someone else.
                     </p>
 
                     <!-- Search Input & Keyboard Shortcut -->
@@ -206,34 +440,54 @@
                     </div>
                 </div>
 
-                <!-- Hero Right Column: High-Tech Canvas Visualizer -->
                 <div class="lg:col-span-5">
-                    <div class="glass-panel rounded-3xl p-6 relative overflow-hidden border border-sky-200/80 shadow-xl">
-                        <div class="flex items-center justify-between pb-4 border-b border-sky-100 mb-4">
-                            <div class="flex items-center space-x-2">
-                                <div class="w-2.5 h-2.5 rounded-full bg-rose-400"></div>
-                                <div class="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
-                                <div class="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
-                                <span class="font-mono text-xs text-slate-500 pl-2">quantum_mesh.engine</span>
+                    <div class="glass-panel rounded-3xl p-4 sm:p-6 relative overflow-hidden border border-sky-200/80 shadow-xl" aria-hidden="true">
+                        <div class="relative w-full h-48 sm:h-56 lg:h-64 rounded-2xl overflow-hidden bg-gradient-to-br from-sky-50/90 via-white/70 to-cyan-50/80 border border-sky-100/90">
+                            <div class="ideas-flow-visual">
+                                <div class="flow-pleasant-orb flow-pleasant-orb--left" aria-hidden="true"></div>
+                                <div class="flow-pleasant-orb flow-pleasant-orb--right" aria-hidden="true"></div>
+                                <svg class="flow-pleasant-paths" viewBox="0 0 360 200" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                                    <defs>
+                                        <linearGradient id="pleasantFlowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="#bae6fd"/>
+                                            <stop offset="50%" stop-color="#7dd3fc"/>
+                                            <stop offset="100%" stop-color="#bae6fd"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M 72 72 Q 130 88 180 100 T 288 72"/>
+                                    <path d="M 72 128 Q 140 108 180 100 T 288 128"/>
+                                </svg>
+                                <div class="flow-pleasant-grid">
+                                    <div class="flow-pleasant-col flow-pleasant-col--ideas">
+                                        <span class="pleasant-pill pleasant-pill--offset-1" style="--pleasant-delay: 0s">Ideas</span>
+                                        <span class="pleasant-pill pleasant-pill--offset-2 hidden sm:inline" style="--pleasant-delay: 0.6s">Things I need</span>
+                                        <span class="pleasant-pill pleasant-pill--offset-3" style="--pleasant-delay: 1.2s">Experiments</span>
+                                        <span class="pleasant-pill" style="--pleasant-delay: 1.8s">Curiosity</span>
+                                    </div>
+                                    <div class="pleasant-spark-wrap" title="A small spark in the middle">
+                                        <div class="pleasant-spark-glow" aria-hidden="true"></div>
+                                        <div class="pleasant-spark">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="flow-pleasant-col flow-pleasant-col--apps">
+                                        <div class="pleasant-apps-grid">
+                                            <div class="pleasant-app" style="--pleasant-delay: 0.2s" title="Books">📚</div>
+                                            <div class="pleasant-app" style="--pleasant-delay: 0.9s" title="Finance">📊</div>
+                                            <div class="pleasant-app" style="--pleasant-delay: 1.5s" title="Tasks">✅</div>
+                                            <div class="pleasant-app" style="--pleasant-delay: 2.1s" title="Games">🎮</div>
+                                            <div class="pleasant-app" style="--pleasant-delay: 0.5s" title="Learning">🎓</div>
+                                            <div class="pleasant-app" style="--pleasant-delay: 1.1s" title="Tools">🛠️</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="flow-pleasant-caption"><strong>Ideas</strong> → Experiments → <strong>Apps</strong></p>
                             </div>
-                            <span id="canvas-status" class="font-mono text-[11px] font-bold text-sky-600 bg-sky-100/70 px-2.5 py-0.5 rounded-md">100% Synced</span>
-                        </div>
-
-                        <!-- Canvas Container -->
-                        <div class="relative w-full h-64 rounded-2xl overflow-hidden bg-gradient-to-b from-sky-900/5 to-sky-50/50 border border-sky-100 hud-cursor-area">
-                            <canvas id="hero-canvas" class="w-full h-full"></canvas>
-                            
-                            <!-- Interactive overlay badge -->
-                            <div class="absolute bottom-3 right-3 pointer-events-none text-[10px] font-mono text-sky-700 bg-white/90 backdrop-blur-md px-2 py-1 rounded-lg border border-sky-200 shadow-2xs">
-                                Move Cursor • Interactive Mesh
-                            </div>
-                        </div>
-
-                        <div class="mt-4 flex items-center justify-between text-xs font-mono text-slate-500">
-                            <span>Nodes Active: <strong class="text-sky-600">32</strong></span>
-                            <span>Latency: <strong class="text-sky-600">0.4ms</strong></span>
                         </div>
                     </div>
+                    <p class="sr-only">Animated illustration: ideas and experiments flow into a lightbulb, then become useful apps such as books, finance, productivity, games, learning, and tools.</p>
                 </div>
             </div>
 
@@ -296,139 +550,31 @@
 
     </div>
 
-    <!-- JavaScript Logic & Interactive Canvas -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
-            /* 1. Interactive Hero Quantum Canvas Engine */
-            const canvas = document.getElementById('hero-canvas');
-            const ctx = canvas.getContext('2d');
-            let width, height;
-
-            function resizeCanvas() {
-                const rect = canvas.getBoundingClientRect();
-                width = rect.width;
-                height = rect.height;
-                canvas.width = width * window.devicePixelRatio;
-                canvas.height = height * window.devicePixelRatio;
-                ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-            }
-
-            resizeCanvas();
-            window.addEventListener('resize', resizeCanvas);
-
-            const mouse = { x: null, y: null, radius: 80 };
-            canvas.addEventListener('mousemove', (e) => {
-                const rect = canvas.getBoundingClientRect();
-                mouse.x = e.clientX - rect.left;
-                mouse.y = e.clientY - rect.top;
-            });
-            canvas.addEventListener('mouseleave', () => {
-                mouse.x = null;
-                mouse.y = null;
-            });
-
-            const particles = [];
-            const numParticles = 32;
-
-            class NodeParticle {
-                constructor() {
-                    this.x = Math.random() * width;
-                    this.y = Math.random() * height;
-                    this.vx = (Math.random() - 0.5) * 0.8;
-                    this.vy = (Math.random() - 0.5) * 0.8;
-                    this.radius = Math.random() * 2 + 1.5;
-                }
-
-                update() {
-                    this.x += this.vx;
-                    this.y += this.vy;
-
-                    if (this.x < 0 || this.x > width) this.vx *= -1;
-                    if (this.y < 0 || this.y > height) this.vy *= -1;
-
-                    if (mouse.x !== null && mouse.y !== null) {
-                        const dx = mouse.x - this.x;
-                        const dy = mouse.y - this.y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-
-                        if (dist < mouse.radius) {
-                            const force = (mouse.radius - dist) / mouse.radius;
-                            this.x -= (dx / dist) * force * 2.5;
-                            this.y -= (dy / dist) * force * 2.5;
-                        }
-                    }
-                }
-
-                draw() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = '#0284c7';
-                    ctx.shadowColor = '#38bdf8';
-                    ctx.shadowBlur = 6;
-                    ctx.fill();
-                    ctx.shadowBlur = 0;
-                }
-            }
-
-            for (let i = 0; i < numParticles; i++) {
-                particles.push(new NodeParticle());
-            }
-
-            function animateCanvas() {
-                ctx.clearRect(0, 0, width, height);
-
-                // Draw connecting mesh lines
-                for (let i = 0; i < particles.length; i++) {
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const dx = particles[i].x - particles[j].x;
-                        const dy = particles[i].y - particles[j].y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-
-                        if (dist < 70) {
-                            ctx.beginPath();
-                            ctx.moveTo(particles[i].x, particles[i].y);
-                            ctx.lineTo(particles[j].x, particles[j].y);
-                            ctx.strokeStyle = `rgba(14, 165, 233, ${0.4 * (1 - dist / 70)})`;
-                            ctx.lineWidth = 1;
-                            ctx.stroke();
-                        }
-                    }
-                }
-
-                particles.forEach(p => {
-                    p.update();
-                    p.draw();
-                });
-
-                requestAnimationFrame(animateCanvas);
-            }
-
-            animateCanvas();
-
-
-            /* 2. Apps from Notion (data/apps.json) */
+            /* Apps from Notion (data/apps.json) */
             const APPS_JSON_URL = 'data/apps.json';
             const CATEGORY_FILTER_SLUG = {
                 Kids: 'kids',
                 Utility: 'tools',
-                Education: 'learning',
+                Learning: 'learning',
                 Finance: 'tools',
                 Other: 'fun',
                 Productivity: 'productivity',
             };
             const SECTION_META = {
                 Kids: { subtitle: 'Learn, play, explore.' },
-                Education: { subtitle: 'Courses, quizzes, and classroom tools.' },
+                Learning: { subtitle: 'Courses, quizzes, and classroom tools.' },
                 Utility: { subtitle: 'Simple tools for everyday problems.' },
                 Finance: { subtitle: 'Markets, ledgers, and price data.' },
                 Other: { subtitle: 'Experiments and side projects.' },
                 Productivity: { subtitle: 'Get things done faster.' },
             };
-            const SECTION_ORDER = ['Kids', 'Education', 'Utility', 'Finance', 'Other', 'Productivity'];
+            const SECTION_ORDER = ['Kids', 'Learning', 'Utility', 'Finance', 'Other', 'Productivity'];
             const CATEGORY_ICON = {
                 Kids: '🎓',
-                Education: '📚',
+                Learning: '📚',
                 Utility: '🛠️',
                 Finance: '📊',
                 Other: '✨',
@@ -452,6 +598,11 @@
 
             function filterSlugForCategory(category) {
                 return CATEGORY_FILTER_SLUG[category] || 'tools';
+            }
+
+            function normalizeCategory(category) {
+                if (category === 'Education') return 'Learning';
+                return category || 'Other';
             }
 
             function actionForApp(app) {
@@ -480,10 +631,11 @@
             }
 
             function renderAppCard(app) {
-                const filterSlug = filterSlugForCategory(app.category);
+                const category = normalizeCategory(app.category);
+                const filterSlug = filterSlugForCategory(category);
                 const searchBlob = [
                     app.name,
-                    app.category,
+                    category,
                     app.status,
                     app.description,
                     filterSlug,
@@ -493,7 +645,7 @@
                 const iconWrap = hasUrl
                     ? 'bg-sky-100 border-sky-200 text-sky-600'
                     : 'bg-slate-100 border-slate-200 text-slate-500';
-                const icon = CATEGORY_ICON[app.category] || '📱';
+                const icon = CATEGORY_ICON[category] || '📱';
                 const description = app.description
                     ? escapeHtml(app.description)
                     : '<span class="text-slate-400">No description yet.</span>';
@@ -515,7 +667,7 @@
             function groupAppsByCategory(apps) {
                 const groups = new Map();
                 apps.forEach((app) => {
-                    const key = app.category || 'Other';
+                    const key = normalizeCategory(app.category);
                     if (!groups.has(key)) groups.set(key, []);
                     groups.get(key).push(app);
                 });
