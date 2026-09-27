@@ -1,21 +1,12 @@
 {
-  "updatedAt": "2026-09-27T09:20:14.362Z",
+  "updatedAt": "2026-09-27T09:30:06.874Z",
   "source": {
     "dataSourceId": "f3f89502-43d1-49d4-9ef6-eb4af133a6c6"
   },
   "apps": [
     {
-      "id": "3e4c2c14-47a5-80da-8450-ede935cdedcb",
-      "name": "Books site from Notion DB",
-      "category": "Education",
-      "status": "Not started",
-      "priority": null,
-      "url": null,
-      "description": ""
-    },
-    {
       "id": "3e3c2c14-47a5-81e8-9278-d8f6937da010",
-      "name": "Chess Puzzles App",
+      "name": "Chess Puzzles",
       "category": "Education",
       "status": "On Hold",
       "priority": "Low",
@@ -32,8 +23,17 @@
       "description": "India-focused GK quiz app with questions, scoring and progression."
     },
     {
+      "id": "3e4c2c14-47a5-80da-8450-ede935cdedcb",
+      "name": "Useful Books",
+      "category": "Education",
+      "status": "Not started",
+      "priority": null,
+      "url": "books.techsavyy.com",
+      "description": ""
+    },
+    {
       "id": "3e3c2c14-47a5-81b0-b9df-c072b2a13776",
-      "name": "Teacher Whiteboard",
+      "name": "Whiteboard",
       "category": "Education",
       "status": "In progress",
       "priority": "High",
@@ -46,7 +46,7 @@
       "category": "Finance",
       "status": "On Hold",
       "priority": "Low",
-      "url": "https://github.com/SriniArch/NeoApp",
+      "url": null,
       "description": "AI-powered investment analysis connected to Zerodha. Portfolio analysis, monthly investment suggestions and buy/sell research support."
     },
     {
@@ -68,22 +68,22 @@
       "description": "Ledger visualization for Kotak Neo platform."
     },
     {
-      "id": "3e3c2c14-47a5-814b-a18d-c1b5a31fed21",
-      "name": "LearnApp",
+      "id": "3e3c2c14-47a5-81fb-a759-c56037f9c668",
+      "name": "Bedtime Stories",
       "category": "Kids",
       "status": "In progress",
       "priority": "High",
-      "url": null,
-      "description": "Kids learning app for Grades 3 and 7, with XP, daily challenges, parent-child mapping and redemption."
+      "url": "stories.techsavyy.com",
+      "description": "Thought-provoking stories for kids with speaker/dictation mode and word highlighting."
     },
     {
-      "id": "3e3c2c14-47a5-81fb-a759-c56037f9c668",
-      "name": "Stories App",
+      "id": "3e3c2c14-47a5-814b-a18d-c1b5a31fed21",
+      "name": "Learn Buddy",
       "category": "Kids",
       "status": "In progress",
       "priority": "High",
-      "url": null,
-      "description": "Thought-provoking stories for kids with speaker/dictation mode and word highlighting."
+      "url": "learn.techsavyy.com",
+      "description": "Kids learning app for Grades 3 and 7, with XP, daily challenges, parent-child mapping and redemption."
     },
     {
       "id": "3e3c2c14-47a5-81c0-9309-fb577558c790",
@@ -105,7 +105,7 @@
     },
     {
       "id": "3e3c2c14-47a5-81b8-af6a-fb9d19a0caf4",
-      "name": "Gold Rate Website",
+      "name": "Gold Rate",
       "category": "Utility",
       "status": "Not started",
       "priority": "Medium",
@@ -114,11 +114,11 @@
     },
     {
       "id": "3e3c2c14-47a5-81d3-a065-f1270fc8a647",
-      "name": "Paperclip PDF Tool",
+      "name": "Paperclip PDF",
       "category": "Utility",
       "status": "In progress",
       "priority": "High",
-      "url": null,
+      "url": "pdf.techsavyy.com",
       "description": "Browser-based Word/PDF conversion and PDF editing using StirlingPDF."
     },
     {
