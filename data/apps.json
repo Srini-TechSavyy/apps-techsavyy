@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-27T09:30:06.874Z",
+  "updatedAt": "2026-09-27T14:12:46.762Z",
   "source": {
     "dataSourceId": "f3f89502-43d1-49d4-9ef6-eb4af133a6c6"
   },
@@ -7,7 +7,7 @@
     {
       "id": "3e3c2c14-47a5-81e8-9278-d8f6937da010",
       "name": "Chess Puzzles",
-      "category": "Learning",
+      "category": "Education",
       "status": "On Hold",
       "priority": "Low",
       "url": null,
@@ -15,8 +15,8 @@
     },
     {
       "id": "3e3c2c14-47a5-81d3-a780-f06bdbb51884",
-      "name": "India GK Quiz",
-      "category": "Learning",
+      "name": "GK Quiz",
+      "category": "Education",
       "status": "Not started",
       "priority": "Medium",
       "url": null,
@@ -25,7 +25,7 @@
     {
       "id": "3e4c2c14-47a5-80da-8450-ede935cdedcb",
       "name": "Useful Books",
-      "category": "Learning",
+      "category": "Education",
       "status": "Not started",
       "priority": null,
       "url": "books.techsavyy.com",
@@ -34,7 +34,7 @@
     {
       "id": "3e3c2c14-47a5-81b0-b9df-c072b2a13776",
       "name": "Whiteboard",
-      "category": "Learning",
+      "category": "Education",
       "status": "In progress",
       "priority": "High",
       "url": "https://whiteboard.techsavyy.com",
@@ -51,7 +51,7 @@
     },
     {
       "id": "3e3c2c14-47a5-819e-8454-e9ba8fa6bb8d",
-      "name": "Gold Price Data / API Site",
+      "name": "Gold Price",
       "category": "Finance",
       "status": "Not started",
       "priority": "Low",
@@ -60,7 +60,7 @@
     },
     {
       "id": "3e3c2c14-47a5-81e7-85ec-c9055e089911",
-      "name": "NeoLedger",
+      "name": "Neo Ledger",
       "category": "Finance",
       "status": "Done",
       "priority": "Medium",
@@ -95,15 +95,6 @@
       "description": "Gaming app."
     },
     {
-      "id": "3e3c2c14-47a5-81ad-b237-ee9a5709d49f",
-      "name": "Calculator Website",
-      "category": "Utility",
-      "status": "Not started",
-      "priority": "Medium",
-      "url": null,
-      "description": "Collection of useful calculators, starting simple rather than building a huge calculator catalog."
-    },
-    {
       "id": "3e3c2c14-47a5-81b8-af6a-fb9d19a0caf4",
       "name": "Gold Rate",
       "category": "Utility",
@@ -120,6 +111,15 @@
       "priority": "High",
       "url": "pdf.techsavyy.com",
       "description": "Browser-based Word/PDF conversion and PDF editing using StirlingPDF."
+    },
+    {
+      "id": "3e3c2c14-47a5-81ad-b237-ee9a5709d49f",
+      "name": "Useful Calculators",
+      "category": "Utility",
+      "status": "Not started",
+      "priority": "Medium",
+      "url": null,
+      "description": "Collection of useful calculators, starting simple rather than building a huge calculator catalog."
     },
     {
       "id": "3e3c2c14-47a5-818b-a3f0-e47d8abc1b73",
