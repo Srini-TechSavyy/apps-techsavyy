@@ -27,7 +27,7 @@ const MOCK_PAGES = [
         rich_text: [
           {
             plain_text:
-              'Kids learning app for Grades 3 and 7, with XP, daily challenges, parent-child mapping and redemption.',
+              'Kids learning app for ages 6-15, with XP, daily challenges, parent-child mapping and redemption.',
           },
         ],
       },
