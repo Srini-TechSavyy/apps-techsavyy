@@ -1,0 +1,134 @@
+{
+  "updatedAt": "2026-09-27T09:18:37.702Z",
+  "source": {
+    "dataSourceId": "f3f89502-43d1-49d4-9ef6-eb4af133a6c6"
+  },
+  "apps": [
+    {
+      "id": "3e4c2c14-47a5-80da-8450-ede935cdedcb",
+      "name": "Books site from Notion DB",
+      "category": "Education",
+      "status": "Not started",
+      "priority": null,
+      "url": null,
+      "description": ""
+    },
+    {
+      "id": "3e3c2c14-47a5-81e8-9278-d8f6937da010",
+      "name": "Chess Puzzles App",
+      "category": "Education",
+      "status": "On Hold",
+      "priority": "Low",
+      "url": null,
+      "description": "Chess puzzle/practice application."
+    },
+    {
+      "id": "3e3c2c14-47a5-81d3-a780-f06bdbb51884",
+      "name": "India GK Quiz",
+      "category": "Education",
+      "status": "Not started",
+      "priority": "Medium",
+      "url": null,
+      "description": "India-focused GK quiz app with questions, scoring and progression."
+    },
+    {
+      "id": "3e3c2c14-47a5-81b0-b9df-c072b2a13776",
+      "name": "Teacher Whiteboard",
+      "category": "Education",
+      "status": "In progress",
+      "priority": "High",
+      "url": "https://whiteboard.techsavyy.com",
+      "description": "Online teacher whiteboard."
+    },
+    {
+      "id": "3e3c2c14-47a5-8130-885a-d9753e7254ce",
+      "name": "Buddha – AI Investment Advisor",
+      "category": "Finance",
+      "status": "On Hold",
+      "priority": "Low",
+      "url": "https://github.com/SriniArch/NeoApp",
+      "description": "AI-powered investment analysis connected to Zerodha. Portfolio analysis, monthly investment suggestions and buy/sell research support."
+    },
+    {
+      "id": "3e3c2c14-47a5-819e-8454-e9ba8fa6bb8d",
+      "name": "Gold Price Data / API Site",
+      "category": "Finance",
+      "status": "Not started",
+      "priority": "Low",
+      "url": null,
+      "description": "Simple gold price data website/API using city-wise Indian gold rates."
+    },
+    {
+      "id": "3e3c2c14-47a5-81e7-85ec-c9055e089911",
+      "name": "NeoLedger",
+      "category": "Finance",
+      "status": "Done",
+      "priority": "Medium",
+      "url": "https://neoledger.techsavyy.com",
+      "description": "Ledger visualization for Kotak Neo platform."
+    },
+    {
+      "id": "3e3c2c14-47a5-814b-a18d-c1b5a31fed21",
+      "name": "LearnApp",
+      "category": "Kids",
+      "status": "In progress",
+      "priority": "High",
+      "url": null,
+      "description": "Kids learning app for Grades 3 and 7, with XP, daily challenges, parent-child mapping and redemption."
+    },
+    {
+      "id": "3e3c2c14-47a5-81fb-a759-c56037f9c668",
+      "name": "Stories App",
+      "category": "Kids",
+      "status": "In progress",
+      "priority": "High",
+      "url": null,
+      "description": "Thought-provoking stories for kids with speaker/dictation mode and word highlighting."
+    },
+    {
+      "id": "3e3c2c14-47a5-81c0-9309-fb577558c790",
+      "name": "Beat the Boss",
+      "category": "Other",
+      "status": "On Hold",
+      "priority": "Low",
+      "url": "https://boss.techsavyy.com",
+      "description": "Gaming app."
+    },
+    {
+      "id": "3e3c2c14-47a5-81ad-b237-ee9a5709d49f",
+      "name": "Calculator Website",
+      "category": "Utility",
+      "status": "Not started",
+      "priority": "Medium",
+      "url": null,
+      "description": "Collection of useful calculators, starting simple rather than building a huge calculator catalog."
+    },
+    {
+      "id": "3e3c2c14-47a5-81b8-af6a-fb9d19a0caf4",
+      "name": "Gold Rate Website",
+      "category": "Utility",
+      "status": "Not started",
+      "priority": "Medium",
+      "url": null,
+      "description": "Gold prices across major Indian cities with Chennai as default and a gold-rate calculator."
+    },
+    {
+      "id": "3e3c2c14-47a5-81d3-a065-f1270fc8a647",
+      "name": "Paperclip PDF Tool",
+      "category": "Utility",
+      "status": "In progress",
+      "priority": "High",
+      "url": null,
+      "description": "Browser-based Word/PDF conversion and PDF editing using StirlingPDF."
+    },
+    {
+      "id": "3e3c2c14-47a5-818b-a3f0-e47d8abc1b73",
+      "name": "WFO/WFH Tracker",
+      "category": "Utility",
+      "status": "Done",
+      "priority": "Low",
+      "url": "https://wfo.techsavyy.com",
+      "description": "Work-from-office/work-from-home tracking app."
+    }
+  ]
+}

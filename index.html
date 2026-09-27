@@ -242,191 +242,11 @@
                 </div>
             </div>
 
-            <!-- Section 1: Kids -->
-            <section class="app-group mb-16" data-category="kids">
-                <div class="flex items-end justify-between mb-6 pb-2 border-b border-sky-200/60">
-                    <div>
-                        <h2 class="font-display font-bold text-2xl text-slate-900 tracking-tight">Kids</h2>
-                        <p class="text-sm text-slate-500 mt-1">Learn, play, explore.</p>
-                    </div>
-                    <a href="#" class="text-xs font-bold font-mono text-sky-600 hover:text-sky-800 transition-colors">View all →</a>
-                </div>
+            <div id="apps-load-error" class="hidden glass-panel rounded-2xl p-6 mb-8 border-amber-200/80 text-center max-w-2xl mx-auto">
+                <p class="text-sm text-slate-600">Could not load the latest app list. Showing cached content if available, or try refreshing shortly.</p>
+            </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Kids Card 1: Learning -->
-                    <div class="app-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-title="learning" data-tags="kids learning">
-                        <div>
-                            <div class="w-10 h-10 rounded-xl bg-sky-100 border border-sky-200 flex items-center justify-center text-sky-600 mb-4 font-bold text-lg">
-                                🎓
-                            </div>
-                            <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Learning</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
-                                Grade-based learning made simple, interactive, and a little more fun.
-                            </p>
-                        </div>
-                        <a href="https://learn.techsavyy.com" target="_blank" class="glass-button text-center w-full py-2.5 px-4 rounded-xl text-xs font-bold text-sky-700 hover:bg-sky-600 hover:text-white transition-all shadow-2xs">
-                            Start Learning →
-                        </a>
-                    </div>
-
-                    <!-- Kids Card 2: Bedtime Stories -->
-                    <div class="app-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-title="bedtime stories" data-tags="kids stories learning">
-                        <div>
-                            <div class="w-10 h-10 rounded-xl bg-sky-100 border border-sky-200 flex items-center justify-center text-sky-600 mb-4 font-bold text-lg">
-                                📖
-                            </div>
-                            <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Bedtime Stories</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
-                                Short stories for curious minds, quiet nights, and one more story before bed.
-                            </p>
-                        </div>
-                        <a href="https://stories.techsavyy.com" target="_blank" class="glass-button text-center w-full py-2.5 px-4 rounded-xl text-xs font-bold text-sky-700 hover:bg-sky-600 hover:text-white transition-all shadow-2xs">
-                            Read a Story →
-                        </a>
-                    </div>
-
-                    <!-- Kids Card 3: GK Quiz -->
-                    <div class="app-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-title="gk quiz" data-tags="kids learning fun">
-                        <div>
-                            <div class="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-500 mb-4 font-bold text-lg">
-                                💡
-                            </div>
-                            <h3 class="font-display font-bold text-lg text-slate-900 mb-2">GK Quiz</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
-                                Quick general-knowledge quizzes covering India, the world, science, history, and more.
-                            </p>
-                        </div>
-                        <button disabled class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-slate-100 border border-slate-200 text-slate-400 cursor-not-allowed text-center">
-                            Coming Soon
-                        </button>
-                    </div>
-
-                    <!-- Kids Card 4: IQ & Brain Games -->
-                    <div class="app-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-title="iq & brain games" data-tags="kids fun learning">
-                        <div>
-                            <div class="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-500 mb-4 font-bold text-lg">
-                                🧠
-                            </div>
-                            <h3 class="font-display font-bold text-lg text-slate-900 mb-2">IQ & Brain Games</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
-                                Logic, patterns, memory, and reasoning challenges for growing minds.
-                            </p>
-                        </div>
-                        <button disabled class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-slate-100 border border-slate-200 text-slate-400 cursor-not-allowed text-center">
-                            Coming Soon
-                        </button>
-                    </div>
-
-                    <!-- Kids Card 5: Chess Puzzles -->
-                    <div class="app-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-title="chess puzzles" data-tags="kids fun learning">
-                        <div>
-                            <div class="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-500 mb-4 font-bold text-lg">
-                                ♟️
-                            </div>
-                            <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Chess Puzzles</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
-                                Practice tactics, solve puzzles, and sharpen your chess thinking one move at a time.
-                            </p>
-                        </div>
-                        <button disabled class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-slate-100 border border-slate-200 text-slate-400 cursor-not-allowed text-center">
-                            Coming Soon
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section 2: Tools -->
-            <section class="app-group mb-16" data-category="tools">
-                <div class="flex items-end justify-between mb-6 pb-2 border-b border-sky-200/60">
-                    <div>
-                        <h2 class="font-display font-bold text-2xl text-slate-900 tracking-tight">Tools</h2>
-                        <p class="text-sm text-slate-500 mt-1">Simple tools for everyday problems.</p>
-                    </div>
-                    <a href="#" class="text-xs font-bold font-mono text-sky-600 hover:text-sky-800 transition-colors">View all →</a>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Tools Card 1: Whiteboard -->
-                    <div class="app-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-title="whiteboard" data-tags="tools productivity">
-                        <div>
-                            <div class="w-10 h-10 rounded-xl bg-sky-100 border border-sky-200 flex items-center justify-center text-sky-600 mb-4 font-bold text-lg">
-                                🎨
-                            </div>
-                            <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Whiteboard</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
-                                A simple digital whiteboard for explaining ideas, sketching, and teaching.
-                            </p>
-                        </div>
-                        <a href="https://whiteboard.techsavyy.com" target="_blank" class="glass-button text-center w-full py-2.5 px-4 rounded-xl text-xs font-bold text-sky-700 hover:bg-sky-600 hover:text-white transition-all shadow-2xs">
-                            Open Whiteboard →
-                        </a>
-                    </div>
-
-                    <!-- Tools Card 2: WFO / WFH Tracker -->
-                    <div class="app-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-title="wfo / wfh tracker" data-tags="tools productivity">
-                        <div>
-                            <div class="w-10 h-10 rounded-xl bg-sky-100 border border-sky-200 flex items-center justify-center text-sky-600 mb-4 font-bold text-lg">
-                                🏢
-                            </div>
-                            <h3 class="font-display font-bold text-lg text-slate-900 mb-2">WFO / WFH Tracker</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
-                                Track office and remote working schedules with ease.
-                            </p>
-                        </div>
-                        <a href="https://wfo.techsavyy.com" target="_blank" class="glass-button text-center w-full py-2.5 px-4 rounded-xl text-xs font-bold text-sky-700 hover:bg-sky-600 hover:text-white transition-all shadow-2xs">
-                            Open Tracker →
-                        </a>
-                    </div>
-
-                    <!-- Tools Card 3: NeoLedger -->
-                    <div class="app-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-title="neoledger" data-tags="tools productivity">
-                        <div>
-                            <div class="w-10 h-10 rounded-xl bg-sky-100 border border-sky-200 flex items-center justify-center text-sky-600 mb-4 font-bold text-lg">
-                                📊
-                            </div>
-                            <h3 class="font-display font-bold text-lg text-slate-900 mb-2">NeoLedger</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
-                                Visualize and understand your Kotak Neo trading ledger.
-                            </p>
-                        </div>
-                        <a href="https://neoledger.techsavyy.com" target="_blank" class="glass-button text-center w-full py-2.5 px-4 rounded-xl text-xs font-bold text-sky-700 hover:bg-sky-600 hover:text-white transition-all shadow-2xs">
-                            Open NeoLedger →
-                        </a>
-                    </div>
-
-                    <!-- Tools Card 4: Beat the Boss -->
-                    <div class="app-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-title="beat the boss" data-tags="tools fun">
-                        <div>
-                            <div class="w-10 h-10 rounded-xl bg-sky-100 border border-sky-200 flex items-center justify-center text-sky-600 mb-4 font-bold text-lg">
-                                🎮
-                            </div>
-                            <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Beat the Boss</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
-                                A fun gaming experience where you take on the boss.
-                            </p>
-                        </div>
-                        <a href="https://boss.techsavyy.com" target="_blank" class="glass-button text-center w-full py-2.5 px-4 rounded-xl text-xs font-bold text-sky-700 hover:bg-sky-600 hover:text-white transition-all shadow-2xs">
-                            Play Now →
-                        </a>
-                    </div>
-
-                    <!-- Tools Card 5: Text Tools -->
-                    <div class="app-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-title="text tools" data-tags="tools productivity">
-                        <div>
-                            <div class="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-500 mb-4 font-bold text-lg">
-                                ✍️
-                            </div>
-                            <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Text Tools</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
-                                Clean, transform, compare, and format text in a few clicks.
-                            </p>
-                        </div>
-                        <button disabled class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-slate-100 border border-slate-200 text-slate-400 cursor-not-allowed text-center">
-                            Coming Soon
-                        </button>
-                    </div>
-                </div>
-            </section>
+            <div id="apps-container" class="space-y-0" aria-live="polite"></div>
 
             <!-- Footer Banner -->
             <div class="glass-panel rounded-2xl p-6 text-center max-w-3xl mx-auto my-12 border-sky-200">
@@ -450,7 +270,7 @@
                     <a href="#apps-section" class="hover:text-sky-600 transition">Apps</a>
                     <a href="#about" id="about" class="hover:text-sky-600 transition">About</a>
                     <a href="#contact" id="contact" class="hover:text-sky-600 transition">Contact</a>
-                    <a href="https://github.com/SriniArch" target="_blank" class="hover:text-sky-600 transition flex items-center space-x-1">
+                    <a href="https://github.com/Srini-TechSavyy/apps-techsavyy" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 transition flex items-center space-x-1">
                         <span>GitHub</span>
                         <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
@@ -573,62 +393,203 @@
             animateCanvas();
 
 
-            /* 2. Filter & Search JS Functionality */
+            /* 2. Apps from Notion (data/apps.json) */
+            const APPS_JSON_URL = 'data/apps.json';
+            const CATEGORY_FILTER_SLUG = {
+                Kids: 'kids',
+                Utility: 'tools',
+                Education: 'learning',
+                Finance: 'tools',
+                Other: 'fun',
+                Productivity: 'productivity',
+            };
+            const SECTION_META = {
+                Kids: { subtitle: 'Learn, play, explore.' },
+                Education: { subtitle: 'Courses, quizzes, and classroom tools.' },
+                Utility: { subtitle: 'Simple tools for everyday problems.' },
+                Finance: { subtitle: 'Markets, ledgers, and price data.' },
+                Other: { subtitle: 'Experiments and side projects.' },
+                Productivity: { subtitle: 'Get things done faster.' },
+            };
+            const SECTION_ORDER = ['Kids', 'Education', 'Utility', 'Finance', 'Other', 'Productivity'];
+            const CATEGORY_ICON = {
+                Kids: '🎓',
+                Education: '📚',
+                Utility: '🛠️',
+                Finance: '📊',
+                Other: '✨',
+                Productivity: '⚡',
+            };
+
+            const appsContainer = document.getElementById('apps-container');
+            const appsLoadError = document.getElementById('apps-load-error');
             const searchInput = document.getElementById('app-search');
             const filterBtns = document.querySelectorAll('.filter-btn');
-            const appCards = document.querySelectorAll('.app-card');
-            const appGroups = document.querySelectorAll('.app-group');
 
             let activeFilter = 'all';
 
+            function escapeHtml(text) {
+                return String(text)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;');
+            }
+
+            function filterSlugForCategory(category) {
+                return CATEGORY_FILTER_SLUG[category] || 'tools';
+            }
+
+            function actionForApp(app) {
+                if (app.url) {
+                    return {
+                        type: 'link',
+                        label: 'Open App →',
+                        href: app.url,
+                    };
+                }
+                const status = (app.status || '').toLowerCase();
+                if (status === 'in progress') {
+                    return { type: 'disabled', label: 'Building' };
+                }
+                if (status === 'on hold') {
+                    return { type: 'disabled', label: 'On Hold' };
+                }
+                return { type: 'disabled', label: 'Coming Soon' };
+            }
+
+            function renderAction(action) {
+                if (action.type === 'link') {
+                    return `<a href="${escapeHtml(action.href)}" target="_blank" rel="noopener noreferrer" class="glass-button text-center w-full py-2.5 px-4 rounded-xl text-xs font-bold text-sky-700 hover:bg-sky-600 hover:text-white transition-all shadow-2xs">${escapeHtml(action.label)}</a>`;
+                }
+                return `<button type="button" disabled class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-slate-100 border border-slate-200 text-slate-400 cursor-not-allowed text-center">${escapeHtml(action.label)}</button>`;
+            }
+
+            function renderAppCard(app) {
+                const filterSlug = filterSlugForCategory(app.category);
+                const searchBlob = [
+                    app.name,
+                    app.category,
+                    app.status,
+                    app.description,
+                    filterSlug,
+                ].join(' ').toLowerCase();
+                const action = actionForApp(app);
+                const hasUrl = Boolean(app.url);
+                const iconWrap = hasUrl
+                    ? 'bg-sky-100 border-sky-200 text-sky-600'
+                    : 'bg-slate-100 border-slate-200 text-slate-500';
+                const icon = CATEGORY_ICON[app.category] || '📱';
+                const description = app.description
+                    ? escapeHtml(app.description)
+                    : '<span class="text-slate-400">No description yet.</span>';
+
+                return `
+                    <div class="app-card glass-card rounded-2xl p-6 flex flex-col justify-between min-h-[220px]" data-title="${escapeHtml(app.name.toLowerCase())}" data-tags="${escapeHtml(searchBlob)}">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl ${iconWrap} border flex items-center justify-center mb-4 font-bold text-lg" aria-hidden="true">
+                                ${icon}
+                            </div>
+                            <h3 class="font-display font-bold text-lg text-slate-900 mb-2">${escapeHtml(app.name)}</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">${description}</p>
+                        </div>
+                        ${renderAction(action)}
+                    </div>
+                `;
+            }
+
+            function groupAppsByCategory(apps) {
+                const groups = new Map();
+                apps.forEach((app) => {
+                    const key = app.category || 'Other';
+                    if (!groups.has(key)) groups.set(key, []);
+                    groups.get(key).push(app);
+                });
+                return groups;
+            }
+
+            function renderApps(apps) {
+                const grouped = groupAppsByCategory(apps);
+                const categories = [
+                    ...SECTION_ORDER.filter((c) => grouped.has(c)),
+                    ...[...grouped.keys()].filter((c) => !SECTION_ORDER.includes(c)).sort(),
+                ];
+
+                appsContainer.innerHTML = categories.map((category) => {
+                    const items = grouped.get(category) || [];
+                    const meta = SECTION_META[category] || { subtitle: 'Apps in this category.' };
+                    const cards = items.map(renderAppCard).join('');
+                    return `
+                        <section class="app-group mb-16" data-category="${escapeHtml(category.toLowerCase())}">
+                            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-6 pb-2 border-b border-sky-200/60">
+                                <div>
+                                    <h2 class="font-display font-bold text-2xl text-slate-900 tracking-tight">${escapeHtml(category)}</h2>
+                                    <p class="text-sm text-slate-500 mt-1">${escapeHtml(meta.subtitle)}</p>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                ${cards}
+                            </div>
+                        </section>
+                    `;
+                }).join('');
+            }
+
             function filterApps() {
                 const query = searchInput.value.toLowerCase().trim();
+                const appCards = document.querySelectorAll('.app-card');
+                const appGroups = document.querySelectorAll('.app-group');
 
-                appCards.forEach(card => {
-                    const title = card.getAttribute('data-title').toLowerCase();
-                    const tags = card.getAttribute('data-tags').toLowerCase();
-                    
+                appCards.forEach((card) => {
+                    const title = card.getAttribute('data-title') || '';
+                    const tags = card.getAttribute('data-tags') || '';
                     const matchesFilter = activeFilter === 'all' || tags.includes(activeFilter);
-                    const matchesSearch = title.includes(query) || tags.includes(query);
-
-                    if (matchesFilter && matchesSearch) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
+                    const matchesSearch = !query || title.includes(query) || tags.includes(query);
+                    card.style.display = matchesFilter && matchesSearch ? 'flex' : 'none';
                 });
 
-                // Hide empty category headers if no visible cards
-                appGroups.forEach(group => {
-                    const visibleCards = group.querySelectorAll('.app-card[style="display: flex;"]');
-                    if (visibleCards.length === 0 && (query !== '' || activeFilter !== 'all')) {
-                        group.style.display = 'none';
-                    } else {
-                        group.style.display = 'block';
-                    }
+                appGroups.forEach((group) => {
+                    const cards = group.querySelectorAll('.app-card');
+                    const anyVisible = [...cards].some((c) => c.style.display !== 'none');
+                    const filtering = query !== '' || activeFilter !== 'all';
+                    group.style.display = !anyVisible && filtering ? 'none' : 'block';
                 });
             }
 
-            // Filter button click handlers
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => {
-                        b.classList.remove('bg-sky-600', 'text-white', 'shadow-md', 'shadow-sky-500/20');
-                        b.classList.add('glass-button', 'text-slate-600');
+            function bindFilters() {
+                filterBtns.forEach((btn) => {
+                    btn.addEventListener('click', () => {
+                        filterBtns.forEach((b) => {
+                            b.classList.remove('bg-sky-600', 'text-white', 'shadow-md', 'shadow-sky-500/20');
+                            b.classList.add('glass-button', 'text-slate-600');
+                        });
+                        btn.classList.remove('glass-button', 'text-slate-600');
+                        btn.classList.add('bg-sky-600', 'text-white', 'shadow-md', 'shadow-sky-500/20');
+                        activeFilter = btn.getAttribute('data-filter');
+                        filterApps();
                     });
-                    
-                    btn.classList.remove('glass-button', 'text-slate-600');
-                    btn.classList.add('bg-sky-600', 'text-white', 'shadow-md', 'shadow-sky-500/20');
-
-                    activeFilter = btn.getAttribute('data-filter');
-                    filterApps();
                 });
-            });
+                searchInput.addEventListener('input', filterApps);
+            }
 
-            // Live Search input event
-            searchInput.addEventListener('input', filterApps);
+            async function loadApps() {
+                try {
+                    const response = await fetch(APPS_JSON_URL, { cache: 'no-cache' });
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    const data = await response.json();
+                    if (!data.apps || !Array.isArray(data.apps)) throw new Error('Invalid apps.json');
+                    renderApps(data.apps);
+                    bindFilters();
+                    filterApps();
+                } catch (err) {
+                    console.error('Failed to load apps.json', err);
+                    appsLoadError.classList.remove('hidden');
+                    bindFilters();
+                }
+            }
 
-            // Shortcut listener: Command/Ctrl + K to focus search
+            loadApps();
+
             window.addEventListener('keydown', (e) => {
                 if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
                     e.preventDefault();
