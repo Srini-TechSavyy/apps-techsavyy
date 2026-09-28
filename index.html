@@ -120,245 +120,34 @@
             background: #38bdf8;
         }
 
-        /* Hero: calm Ideas → Experiments → Apps illustration */
-        .ideas-flow-visual {
-            position: relative;
+        /* Hero: app engine illustration (image asset) */
+        .hero-app-engine-visual {
+            margin: 0;
             width: 100%;
-            height: 100%;
-            min-height: 11rem;
             display: flex;
-            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            padding: 0.75rem 0.5rem 0.5rem;
-            overflow: hidden;
+        }
+
+        .hero-app-engine-img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            max-height: 13.5rem;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        @media (min-width: 640px) {
+            .hero-app-engine-img {
+                max-height: 16rem;
+            }
         }
 
         @media (min-width: 1024px) {
-            .ideas-flow-visual {
-                min-height: 14rem;
-                padding: 1rem 0.75rem 0.65rem;
-            }
-        }
-
-        .flow-pleasant-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(28px);
-            pointer-events: none;
-            opacity: 0.55;
-        }
-
-        .flow-pleasant-orb--left {
-            width: 5.5rem;
-            height: 5.5rem;
-            left: 8%;
-            top: 38%;
-            background: rgba(186, 230, 253, 0.65);
-            animation: pleasant-orb-drift 12s ease-in-out infinite;
-        }
-
-        .flow-pleasant-orb--right {
-            width: 6rem;
-            height: 6rem;
-            right: 6%;
-            top: 30%;
-            background: rgba(165, 243, 252, 0.5);
-            animation: pleasant-orb-drift 14s ease-in-out infinite reverse;
-        }
-
-        @keyframes pleasant-orb-drift {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(6px, -8px) scale(1.06); }
-        }
-
-        .flow-pleasant-paths {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            opacity: 0.22;
-        }
-
-        .flow-pleasant-paths path {
-            fill: none;
-            stroke: url(#pleasantFlowGrad);
-            stroke-width: 2;
-            stroke-linecap: round;
-        }
-
-        .flow-pleasant-grid {
-            position: relative;
-            z-index: 1;
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-            align-items: center;
-            gap: 0.35rem;
-            flex: 1;
-        }
-
-        .flow-pleasant-col {
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-        }
-
-        .flow-pleasant-col--ideas {
-            align-items: flex-end;
-            padding-right: 0.15rem;
-        }
-
-        .flow-pleasant-col--apps {
-            align-items: flex-start;
-            padding-left: 0.15rem;
-        }
-
-        .pleasant-pill {
-            padding: 0.3rem 0.65rem;
-            font-size: 0.625rem;
-            font-weight: 600;
-            letter-spacing: 0.02em;
-            color: #0369a1;
-            background: rgba(255, 255, 255, 0.82);
-            border: 1px solid rgba(186, 230, 253, 0.65);
-            border-radius: 9999px;
-            box-shadow: 0 2px 10px rgba(14, 165, 233, 0.07);
-            white-space: nowrap;
-            animation: pleasant-float 8s ease-in-out infinite;
-            animation-delay: var(--pleasant-delay, 0s);
-        }
-
-        @media (min-width: 640px) {
-            .pleasant-pill {
-                font-size: 0.68rem;
-                padding: 0.35rem 0.75rem;
-            }
-        }
-
-        .pleasant-pill--offset-1 { margin-right: 0.5rem; }
-        .pleasant-pill--offset-2 { margin-right: 0; }
-        .pleasant-pill--offset-3 { margin-right: 0.75rem; }
-
-        .pleasant-spark-wrap {
-            position: relative;
-            width: 3.25rem;
-            height: 3.25rem;
-            flex-shrink: 0;
-        }
-
-        @media (min-width: 640px) {
-            .pleasant-spark-wrap {
-                width: 3.75rem;
-                height: 3.75rem;
-            }
-        }
-
-        .pleasant-spark-glow {
-            position: absolute;
-            inset: -0.65rem;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(125, 211, 252, 0.45) 0%, transparent 72%);
-            animation: pleasant-breathe 6s ease-in-out infinite;
-        }
-
-        .pleasant-spark {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: linear-gradient(160deg, #ffffff 0%, #e0f2fe 55%, #bae6fd 100%);
-            border: 1px solid rgba(255, 255, 255, 0.95);
-            box-shadow:
-                0 4px 16px rgba(56, 189, 248, 0.18),
-                inset 0 1px 0 rgba(255, 255, 255, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #0284c7;
-        }
-
-        .pleasant-spark svg {
-            width: 1.35rem;
-            height: 1.35rem;
-            opacity: 0.9;
-        }
-
-        @media (min-width: 640px) {
-            .pleasant-spark svg {
-                width: 1.5rem;
-                height: 1.5rem;
-            }
-        }
-
-        .pleasant-apps-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 2.15rem);
-            gap: 0.35rem;
-        }
-
-        @media (min-width: 640px) {
-            .pleasant-apps-grid {
-                grid-template-columns: repeat(2, 2.35rem);
-                gap: 0.4rem;
-            }
-        }
-
-        .pleasant-app {
-            width: 2.15rem;
-            height: 2.15rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.95rem;
-            background: rgba(255, 255, 255, 0.85);
-            border: 1px solid rgba(186, 230, 253, 0.55);
-            border-radius: 0.65rem;
-            box-shadow: 0 3px 12px rgba(14, 165, 233, 0.08);
-            animation: pleasant-float 7s ease-in-out infinite;
-            animation-delay: var(--pleasant-delay, 0s);
-        }
-
-        @media (min-width: 640px) {
-            .pleasant-app {
-                width: 2.35rem;
-                height: 2.35rem;
-                font-size: 1rem;
-                border-radius: 0.7rem;
-            }
-        }
-
-        .flow-pleasant-caption {
-            position: relative;
-            z-index: 1;
-            margin-top: 0.65rem;
-            text-align: center;
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.06em;
-            color: #94a3b8;
-        }
-
-        .flow-pleasant-caption strong {
-            font-weight: 600;
-            color: #38bdf8;
-        }
-
-        @keyframes pleasant-float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-4px); }
-        }
-
-        @keyframes pleasant-breathe {
-            0%, 100% { opacity: 0.45; transform: scale(1); }
-            50% { opacity: 0.75; transform: scale(1.06); }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .pleasant-pill,
-            .pleasant-app,
-            .pleasant-spark-glow,
-            .flow-pleasant-orb {
-                animation: none !important;
+            .hero-app-engine-img {
+                max-height: 19.5rem;
             }
         }
     </style>
@@ -482,54 +271,19 @@
                     </div>
                 </div>
 
-                <div class="lg:col-span-5 max-w-md mx-auto w-full lg:max-w-none">
-                    <div class="glass-panel rounded-3xl p-3 sm:p-6 relative overflow-hidden border border-sky-200/80 shadow-xl" aria-hidden="true">
-                        <div class="relative w-full h-40 sm:h-48 lg:h-64 rounded-2xl overflow-hidden bg-gradient-to-br from-sky-50/90 via-white/70 to-cyan-50/80 border border-sky-100/90">
-                            <div class="ideas-flow-visual">
-                                <div class="flow-pleasant-orb flow-pleasant-orb--left" aria-hidden="true"></div>
-                                <div class="flow-pleasant-orb flow-pleasant-orb--right" aria-hidden="true"></div>
-                                <svg class="flow-pleasant-paths" viewBox="0 0 360 200" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-                                    <defs>
-                                        <linearGradient id="pleasantFlowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                                            <stop offset="0%" stop-color="#bae6fd"/>
-                                            <stop offset="50%" stop-color="#7dd3fc"/>
-                                            <stop offset="100%" stop-color="#bae6fd"/>
-                                        </linearGradient>
-                                    </defs>
-                                    <path d="M 72 72 Q 130 88 180 100 T 288 72"/>
-                                    <path d="M 72 128 Q 140 108 180 100 T 288 128"/>
-                                </svg>
-                                <div class="flow-pleasant-grid">
-                                    <div class="flow-pleasant-col flow-pleasant-col--ideas">
-                                        <span class="pleasant-pill pleasant-pill--offset-1" style="--pleasant-delay: 0s">Ideas</span>
-                                        <span class="pleasant-pill pleasant-pill--offset-2 hidden sm:inline" style="--pleasant-delay: 0.6s">Things I need</span>
-                                        <span class="pleasant-pill pleasant-pill--offset-3" style="--pleasant-delay: 1.2s">Experiments</span>
-                                        <span class="pleasant-pill" style="--pleasant-delay: 1.8s">Curiosity</span>
-                                    </div>
-                                    <div class="pleasant-spark-wrap" title="A small spark in the middle">
-                                        <div class="pleasant-spark-glow" aria-hidden="true"></div>
-                                        <div class="pleasant-spark">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div class="flow-pleasant-col flow-pleasant-col--apps">
-                                        <div class="pleasant-apps-grid">
-                                            <div class="pleasant-app" style="--pleasant-delay: 0.2s" title="Books">📚</div>
-                                            <div class="pleasant-app" style="--pleasant-delay: 0.9s" title="Finance">📊</div>
-                                            <div class="pleasant-app" style="--pleasant-delay: 1.5s" title="Tasks">✅</div>
-                                            <div class="pleasant-app" style="--pleasant-delay: 2.1s" title="Games">🎮</div>
-                                            <div class="pleasant-app" style="--pleasant-delay: 0.5s" title="Learning">🎓</div>
-                                            <div class="pleasant-app" style="--pleasant-delay: 1.1s" title="Tools">🛠️</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="flow-pleasant-caption"><strong>Ideas</strong> → Experiments → <strong>Apps</strong></p>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="sr-only">Animated illustration: ideas and experiments flow into a lightbulb, then become useful apps such as books, finance, productivity, games, learning, and tools.</p>
+                <div class="lg:col-span-5 max-w-md mx-auto w-full lg:max-w-none flex items-center">
+                    <figure class="hero-app-engine-visual" aria-hidden="true">
+                        <img
+                            src="appengine.png"
+                            alt=""
+                            width="1624"
+                            height="968"
+                            class="hero-app-engine-img"
+                            decoding="async"
+                            fetchpriority="high"
+                        />
+                    </figure>
+                    <p class="sr-only">Illustration: Ideas, things I need, experiments, and curiosity flow into a creative machine with gears, then become writing, experiments, apps, and side projects — Ideas to Experiments to useful things.</p>
                 </div>
             </div>
 
