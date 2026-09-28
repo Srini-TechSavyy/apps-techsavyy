@@ -28,7 +28,7 @@
       "category": "Education",
       "status": "Not started",
       "priority": null,
-      "url": "books.techsavyy.com",
+      "url": "https://books.techsavyy.com",
       "description": ""
     },
     {
@@ -73,7 +73,7 @@
       "category": "Kids",
       "status": "In progress",
       "priority": "High",
-      "url": "stories.techsavyy.com",
+      "url": "https://stories.techsavyy.com",
       "description": "Thought-provoking stories for kids with speaker/dictation mode and word highlighting."
     },
     {
@@ -82,7 +82,7 @@
       "category": "Kids",
       "status": "In progress",
       "priority": "High",
-      "url": "learn.techsavyy.com",
+      "url": "https://learn.techsavyy.com",
       "description": "Kids learning app for Grades 3 and 7, with XP, daily challenges, parent-child mapping and redemption."
     },
     {
@@ -109,7 +109,7 @@
       "category": "Utility",
       "status": "In progress",
       "priority": "High",
-      "url": "pdf.techsavyy.com",
+      "url": "https://pdf.techsavyy.com",
       "description": "Browser-based Word/PDF conversion and PDF editing using StirlingPDF."
     },
     {

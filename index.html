@@ -636,12 +636,19 @@
                 return category || 'Other';
             }
 
+            function normalizeAppUrl(url) {
+                const trimmed = String(url).trim();
+                if (!trimmed) return trimmed;
+                if (/^https?:\/\//i.test(trimmed)) return trimmed;
+                return `https://${trimmed}`;
+            }
+
             function actionForApp(app) {
                 if (app.url) {
                     return {
                         type: 'link',
                         label: 'Open App →',
-                        href: app.url,
+                        href: normalizeAppUrl(app.url),
                     };
                 }
                 const status = (app.status || '').toLowerCase();

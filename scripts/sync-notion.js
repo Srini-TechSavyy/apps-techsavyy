@@ -57,6 +57,14 @@ function titleToPlain(titleProp) {
   return richTextToPlain(titleProp?.title);
 }
 
+function normalizeAppUrl(url) {
+  if (!url || typeof url !== 'string') return url;
+  const trimmed = url.trim();
+  if (!trimmed) return null;
+  if (/^https?:\/\//i.test(trimmed)) return trimmed;
+  return `https://${trimmed}`;
+}
+
 function pageToApp(page) {
   const props = page.properties || {};
   const name = titleToPlain(props.Name);
@@ -68,7 +76,7 @@ function pageToApp(page) {
     category: props.Category?.select?.name || 'Other',
     status: props.Status?.status?.name || 'Not started',
     priority: props.Priority?.select?.name || null,
-    url: props.Domain?.url || null,
+    url: normalizeAppUrl(props.Domain?.url) || null,
     description: richTextToPlain(props.Notes?.rich_text),
   };
 }
