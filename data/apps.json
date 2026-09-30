@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-30T11:51:45.411Z",
+  "updatedAt": "2026-09-30T17:32:30.990Z",
   "source": {
     "dataSourceId": "f3f89502-43d1-49d4-9ef6-eb4af133a6c6"
   },
@@ -26,7 +26,7 @@
       "id": "3e4c2c14-47a5-80da-8450-ede935cdedcb",
       "name": "Useful Books",
       "category": "Education",
-      "status": "Not started",
+      "status": "In progress",
       "priority": null,
       "url": "https://books.techsavyy.com",
       "description": ""
@@ -35,7 +35,7 @@
       "id": "3e3c2c14-47a5-81b0-b9df-c072b2a13776",
       "name": "Whiteboard",
       "category": "Education",
-      "status": "In progress",
+      "status": "Done",
       "priority": "High",
       "url": "https://whiteboard.techsavyy.com",
       "description": "Online teacher whiteboard."
@@ -50,15 +50,6 @@
       "description": "AI-powered investment analysis connected to Zerodha. Portfolio analysis, monthly investment suggestions and buy/sell research support."
     },
     {
-      "id": "3e3c2c14-47a5-819e-8454-e9ba8fa6bb8d",
-      "name": "Gold Price",
-      "category": "Finance",
-      "status": "Not started",
-      "priority": "Low",
-      "url": null,
-      "description": "Simple gold price data website/API using city-wise Indian gold rates."
-    },
-    {
       "id": "3e3c2c14-47a5-81e7-85ec-c9055e089911",
       "name": "Neo Ledger",
       "category": "Finance",
@@ -71,7 +62,7 @@
       "id": "3e3c2c14-47a5-81fb-a759-c56037f9c668",
       "name": "Bedtime Stories",
       "category": "Kids",
-      "status": "In progress",
+      "status": "Done",
       "priority": "High",
       "url": "https://stories.techsavyy.com",
       "description": "Thought-provoking stories for kids with speaker/dictation mode and word highlighting."
@@ -80,7 +71,7 @@
       "id": "3e3c2c14-47a5-814b-a18d-c1b5a31fed21",
       "name": "Learn Buddy",
       "category": "Kids",
-      "status": "In progress",
+      "status": "Done",
       "priority": "High",
       "url": "https://learn.techsavyy.com",
       "description": "Kids learning app for Grades 3 and 7, with XP, daily challenges, parent-child mapping and redemption."
@@ -98,7 +89,7 @@
       "id": "3e3c2c14-47a5-81b8-af6a-fb9d19a0caf4",
       "name": "Gold Rate",
       "category": "Utility",
-      "status": "Not started",
+      "status": "Shelved",
       "priority": "Medium",
       "url": null,
       "description": "Gold prices across major Indian cities with Chennai as default and a gold-rate calculator."
@@ -107,7 +98,7 @@
       "id": "3e3c2c14-47a5-81d3-a065-f1270fc8a647",
       "name": "Paperclip PDF",
       "category": "Utility",
-      "status": "In progress",
+      "status": "Done",
       "priority": "High",
       "url": "https://pdf.techsavyy.com",
       "description": "Browser-based Word/PDF conversion and PDF editing using StirlingPDF."
