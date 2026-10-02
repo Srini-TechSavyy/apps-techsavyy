@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-02T04:39:28.184Z",
+  "updatedAt": "2026-10-02T04:40:48.360Z",
   "source": {
     "dataSourceId": "f3f89502-43d1-49d4-9ef6-eb4af133a6c6"
   },
@@ -68,6 +68,15 @@
       "description": "Personal finance utility that visualizes and organizes ledger transactions from the Kotak Neo trading platform."
     },
     {
+      "id": "3e3c2c14-47a5-81c0-9309-fb577558c790",
+      "name": "Beat the Boss",
+      "category": "Games",
+      "status": "On Hold",
+      "priority": "Low",
+      "url": "https://boss.techsavyy.com",
+      "description": "Lightweight gaming app built around a simple Beat the Boss challenge and repeatable gameplay."
+    },
+    {
       "id": "3edc2c14-47a5-8098-90c0-df34eafed04a",
       "name": "Dino Rush",
       "category": "Games",
@@ -93,15 +102,6 @@
       "priority": "High",
       "url": "https://learn.techsavyy.com",
       "description": "Kids learning platform for Ages 6-15 with subject-based practice, daily challenges, XP, parent-child accounts and a points redemption system."
-    },
-    {
-      "id": "3e3c2c14-47a5-81c0-9309-fb577558c790",
-      "name": "Beat the Boss",
-      "category": "Other",
-      "status": "On Hold",
-      "priority": "Low",
-      "url": "https://boss.techsavyy.com",
-      "description": "Lightweight gaming app built around a simple Beat the Boss challenge and repeatable gameplay."
     },
     {
       "id": "3e3c2c14-47a5-81b8-af6a-fb9d19a0caf4",
