@@ -23,7 +23,7 @@ const MOCK_PAGES = [
       Status: { status: { name: 'In progress' } },
       Priority: { select: { name: 'High' } },
       Domain: { url: null },
-      Notes: {
+      Description: {
         rich_text: [
           {
             plain_text:
@@ -41,7 +41,7 @@ const MOCK_PAGES = [
       Status: { status: { name: 'Done' } },
       Priority: { select: { name: 'Low' } },
       Domain: { url: 'https://wfo.techsavyy.com' },
-      Notes: {
+      Description: {
         rich_text: [{ plain_text: 'Work-from-office/work-from-home tracking app.' }],
       },
     },
@@ -77,7 +77,7 @@ function pageToApp(page) {
     status: props.Status?.status?.name || 'Not started',
     priority: props.Priority?.select?.name || null,
     url: normalizeAppUrl(props.Domain?.url) || null,
-    description: richTextToPlain(props.Notes?.rich_text),
+    description: richTextToPlain(props.Description?.rich_text),
   };
 }
 
