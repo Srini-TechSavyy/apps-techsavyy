@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-02T04:36:23.330Z",
+  "updatedAt": "2026-10-02T04:36:46.812Z",
   "source": {
     "dataSourceId": "f3f89502-43d1-49d4-9ef6-eb4af133a6c6"
   },
@@ -11,7 +11,7 @@
       "status": "On Hold",
       "priority": "Low",
       "url": null,
-      "description": "Chess puzzle/practice application."
+      "description": "Chess practice app focused on solving puzzles and improving tactical pattern recognition."
     },
     {
       "id": "3e3c2c14-47a5-81d3-a780-f06bdbb51884",
@@ -20,7 +20,7 @@
       "status": "Not started",
       "priority": "Medium",
       "url": null,
-      "description": "India-focused GK quiz app with questions, scoring and progression."
+      "description": "General knowledge quiz app with question practice, scoring and progression."
     },
     {
       "id": "3e4c2c14-47a5-80da-8450-ede935cdedcb",
@@ -29,7 +29,7 @@
       "status": "In progress",
       "priority": null,
       "url": "https://books.techsavyy.com",
-      "description": ""
+      "description": "Curated useful books, designed to capture practical recommendations, summaries and ideas worth revisiting."
     },
     {
       "id": "3e3c2c14-47a5-81b0-b9df-c072b2a13776",
@@ -38,7 +38,7 @@
       "status": "Done",
       "priority": "High",
       "url": "https://whiteboard.techsavyy.com",
-      "description": "Online teacher whiteboard."
+      "description": "Interactive online whiteboard for teachers and learners to explain, draw and work through concepts digitally."
     },
     {
       "id": "3edc2c14-47a5-80a9-9452-e9f22393b70b",
@@ -47,7 +47,7 @@
       "status": "In progress",
       "priority": "High",
       "url": "https://workbook.techsavyy.com",
-      "description": ""
+      "description": "AI-powered workbook and assessment generator for students, creating structured practice worksheets from a reusable question bank with caching and question refresh options."
     },
     {
       "id": "3e3c2c14-47a5-8130-885a-d9753e7254ce",
@@ -56,7 +56,7 @@
       "status": "On Hold",
       "priority": "Low",
       "url": null,
-      "description": "AI-powered investment analysis connected to Zerodha. Portfolio analysis, monthly investment suggestions and buy/sell research support."
+      "description": "AI-powered investment assistant connected to brokerage data, providing portfolio analysis, investment ideas and research support."
     },
     {
       "id": "3e3c2c14-47a5-81e7-85ec-c9055e089911",
@@ -65,7 +65,7 @@
       "status": "Done",
       "priority": "Medium",
       "url": "https://neoledger.techsavyy.com",
-      "description": "Ledger visualization for Kotak Neo platform."
+      "description": "Personal finance utility that visualizes and organizes ledger transactions from the Kotak Neo trading platform."
     },
     {
       "id": "3edc2c14-47a5-8098-90c0-df34eafed04a",
@@ -74,7 +74,7 @@
       "status": "Done",
       "priority": "Medium",
       "url": "https://dino.techsavyy.com",
-      "description": ""
+      "description": "Simple browser game built around fast-paced dinosaur running and obstacle avoidance."
     },
     {
       "id": "3e3c2c14-47a5-81fb-a759-c56037f9c668",
@@ -83,7 +83,7 @@
       "status": "Done",
       "priority": "High",
       "url": "https://stories.techsavyy.com",
-      "description": "Thought-provoking stories for kids with speaker/dictation mode and word highlighting."
+      "description": "Kids storytelling with thought-provoking stories, speaker and dictation modes, and synchronized word highlighting for reading practice."
     },
     {
       "id": "3e3c2c14-47a5-814b-a18d-c1b5a31fed21",
@@ -92,7 +92,7 @@
       "status": "Done",
       "priority": "High",
       "url": "https://learn.techsavyy.com",
-      "description": "Kids learning app for Grades 3 and 7, with XP, daily challenges, parent-child mapping and redemption."
+      "description": "Kids learning platform for Ages 6-15 with subject-based practice, daily challenges, XP, parent-child accounts and a points redemption system."
     },
     {
       "id": "3e3c2c14-47a5-81c0-9309-fb577558c790",
@@ -101,7 +101,7 @@
       "status": "On Hold",
       "priority": "Low",
       "url": "https://boss.techsavyy.com",
-      "description": "Gaming app."
+      "description": "Lightweight gaming app built around a simple Beat the Boss challenge and repeatable gameplay."
     },
     {
       "id": "3e3c2c14-47a5-81b8-af6a-fb9d19a0caf4",
@@ -110,7 +110,7 @@
       "status": "Shelved",
       "priority": "Medium",
       "url": null,
-      "description": "Gold prices across major Indian cities with Chennai as default and a gold-rate calculator."
+      "description": "Gold-rate utility showing gold prices across major Indian cities with Chennai as the default and an integrated gold-value calculator."
     },
     {
       "id": "3e3c2c14-47a5-81d3-a065-f1270fc8a647",
@@ -119,7 +119,7 @@
       "status": "Done",
       "priority": "High",
       "url": "https://pdf.techsavyy.com",
-      "description": "Browser-based Word/PDF conversion and PDF editing using StirlingPDF."
+      "description": "Browser-based PDF utility for converting documents, editing PDFs and handling common document workflows using Stirling PDF."
     },
     {
       "id": "3edc2c14-47a5-80ce-97b9-c121910835d1",
@@ -128,7 +128,7 @@
       "status": "In progress",
       "priority": "Medium",
       "url": "https://tripmate.techsavyy.com",
-      "description": ""
+      "description": "Simple travel planning app for building family and road-trip itineraries, with Google sign-in and cloud storage for trip details."
     },
     {
       "id": "3e3c2c14-47a5-81ad-b237-ee9a5709d49f",
@@ -137,7 +137,7 @@
       "status": "Not started",
       "priority": "Medium",
       "url": null,
-      "description": "Collection of useful calculators, starting simple rather than building a huge calculator catalog."
+      "description": "Collection of focused everyday calculators, starting with a small set of useful tools rather than a large calculator catalog."
     },
     {
       "id": "3e3c2c14-47a5-818b-a3f0-e47d8abc1b73",
@@ -146,7 +146,7 @@
       "status": "Done",
       "priority": "Low",
       "url": "https://wfo.techsavyy.com",
-      "description": "Work-from-office/work-from-home tracking app."
+      "description": "Work-from-office and work-from-home tracker for recording attendance patterns and viewing office versus remote work history."
     }
   ]
 }
