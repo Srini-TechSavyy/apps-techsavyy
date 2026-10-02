@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-02T03:53:04.633Z",
+  "updatedAt": "2026-10-02T04:24:40.557Z",
   "source": {
     "dataSourceId": "f3f89502-43d1-49d4-9ef6-eb4af133a6c6"
   },
@@ -41,6 +41,15 @@
       "description": "Online teacher whiteboard."
     },
     {
+      "id": "3edc2c14-47a5-80a9-9452-e9f22393b70b",
+      "name": "WorkBook Generator",
+      "category": "Education",
+      "status": "In progress",
+      "priority": "High",
+      "url": "https://workbook.techsavyy.com",
+      "description": ""
+    },
+    {
       "id": "3e3c2c14-47a5-8130-885a-d9753e7254ce",
       "name": "Buddha – AI Investment Advisor",
       "category": "Finance",
@@ -57,6 +66,15 @@
       "priority": "Medium",
       "url": "https://neoledger.techsavyy.com",
       "description": "Ledger visualization for Kotak Neo platform."
+    },
+    {
+      "id": "3edc2c14-47a5-8098-90c0-df34eafed04a",
+      "name": "Dino Rush",
+      "category": "Games",
+      "status": "Done",
+      "priority": "Medium",
+      "url": "https://dino.techsavyy.com",
+      "description": ""
     },
     {
       "id": "3e3c2c14-47a5-81fb-a759-c56037f9c668",
@@ -102,6 +120,15 @@
       "priority": "High",
       "url": "https://pdf.techsavyy.com",
       "description": "Browser-based Word/PDF conversion and PDF editing using StirlingPDF."
+    },
+    {
+      "id": "3edc2c14-47a5-80ce-97b9-c121910835d1",
+      "name": "Trip Planner",
+      "category": "Utility",
+      "status": "In progress",
+      "priority": "Medium",
+      "url": "https://tripmate.techsavyy.com",
+      "description": ""
     },
     {
       "id": "3e3c2c14-47a5-81ad-b237-ee9a5709d49f",
