@@ -40,87 +40,148 @@
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: linear-gradient(135deg, #eef7ff 0%, #e0f2fe 35%, #f0f9ff 70%, #e6f4ff 100%);
+            background: #f8fafc;
+            background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14, 165, 233, 0.08), transparent);
             color: #0f172a;
             min-height: 100vh;
         }
 
-        /* Futuristic Glassmorphism Panel Tokens */
         .glass-panel {
-            background: rgba(255, 255, 255, 0.72);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.85);
-            box-shadow: 
-                0 10px 30px -5px rgba(14, 165, 233, 0.08),
-                0 0 0 1px rgba(186, 230, 253, 0.35),
-                inset 0 1px 1px rgba(255, 255, 255, 0.9);
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.65);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 4px 20px -2px rgba(14, 165, 233, 0.05);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .glass-card:hover {
-            background: rgba(255, 255, 255, 0.92);
-            transform: translateY(-4px);
-            box-shadow: 
-                0 12px 30px -4px rgba(14, 165, 233, 0.15),
-                0 0 15px rgba(56, 189, 248, 0.2);
-            border-color: rgba(56, 189, 248, 0.6);
+            background: #fff;
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
         }
 
         .glass-button {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(186, 230, 253, 0.6);
-            transition: all 0.25s ease;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
         }
 
         .glass-button:hover {
-            background: rgba(255, 255, 255, 1);
-            border-color: rgba(14, 165, 233, 0.6);
-            box-shadow: 0 4px 14px rgba(14, 165, 233, 0.15);
+            border-color: #bae6fd;
+            box-shadow: 0 2px 8px rgba(14, 165, 233, 0.08);
         }
 
         .footer-support-link:focus-visible {
             outline: none;
             box-shadow:
-                0 0 0 2px rgba(255, 255, 255, 0.9),
+                0 0 0 2px #fff,
                 0 0 0 4px rgba(14, 165, 233, 0.55);
         }
 
-        /* Background Ambient Glow Effects */
-        .ambient-glow {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(100px);
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.6;
+        .site-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
 
-        /* Custom Scrollbar */
+        .header-search-input {
+            width: 100%;
+            min-width: 0;
+        }
+
+        @media (min-width: 1024px) {
+            .header-search-input {
+                width: 220px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .header-search-input {
+                width: 260px;
+            }
+        }
+
+        .app-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+        }
+
+        .app-card:hover {
+            border-color: #bae6fd;
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .app-card--muted {
+            background: #fafbfc;
+            border-color: #e8ecf1;
+        }
+
+        .app-card--muted:hover {
+            transform: none;
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+            border-color: #e2e8f0;
+        }
+
+        .app-card-placeholder {
+            border: 2px dashed #cbd5e1;
+            background: #f8fafc;
+            border-radius: 20px;
+            box-shadow: none;
+        }
+
+        .app-card-placeholder:hover {
+            transform: none;
+            border-color: #94a3b8;
+        }
+
+        .section-block {
+            margin-bottom: 4rem;
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.25rem;
+        }
+
+        @media (max-width: 1023px) {
+            .app-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 639px) {
+            .app-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .filter-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .filter-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #e0f2fe;
+            background: #f1f5f9;
         }
         ::-webkit-scrollbar-thumb {
-            background: #7dd3fc;
+            background: #cbd5e1;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #38bdf8;
+            background: #94a3b8;
         }
 
-        /* Hero: app engine illustration (image asset) */
         .hero-app-engine-visual {
             margin: 0;
             width: 100%;
@@ -134,85 +195,90 @@
             width: 100%;
             max-width: 100%;
             height: auto;
-            max-height: 13.5rem;
+            max-height: 11.5rem;
             object-fit: contain;
             object-position: center;
         }
 
         @media (min-width: 640px) {
             .hero-app-engine-img {
-                max-height: 16rem;
+                max-height: 13.5rem;
             }
         }
 
         @media (min-width: 1024px) {
             .hero-app-engine-img {
-                max-height: 19.5rem;
+                max-height: 16.5rem;
             }
         }
     </style>
 </head>
 <body class="relative antialiased selection:bg-sky-200 selection:text-sky-900 overflow-x-hidden">
 
-    <!-- Ambient Glowing Background Bubbles & Grid -->
-    <div class="ambient-glow w-[600px] h-[600px] bg-sky-300/40 -top-40 -left-20"></div>
-    <div class="ambient-glow w-[500px] h-[500px] bg-cyan-200/50 top-1/3 -right-20"></div>
-    <div class="ambient-glow w-[700px] h-[700px] bg-blue-200/30 bottom-0 left-1/4"></div>
-    <div class="fixed inset-0 bg-[radial-gradient(#0ea5e9_0.8px,transparent_0.8px)] [background-size:24px_24px] opacity-[0.12] pointer-events-none z-0"></div>
-
     <div class="relative z-10 flex flex-col min-h-screen">
 
         <!-- Navigation Header -->
-        <header class="sticky top-0 z-50 px-4 sm:px-8 py-4">
-            <nav class="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3.5 flex items-center justify-between">
-                <!-- Brand Logo: </> Techsavyy -->
-                <a href="#" class="flex items-center space-x-2.5 font-mono text-xl font-bold tracking-tight text-slate-900 hover:opacity-90 transition">
-                    <span class="text-sky-600 bg-sky-100/80 px-2.5 py-1 rounded-xl border border-sky-200 shadow-xs font-extrabold">&lt;/&gt;</span>
+        <header class="site-header sticky top-0 z-50 border-b border-slate-200/80">
+            <nav class="max-w-7xl mx-auto h-16 px-4 sm:px-6 flex items-center justify-between gap-3 sm:gap-4">
+                <a href="#" class="flex items-center shrink-0 space-x-2 font-mono text-lg sm:text-xl font-bold tracking-tight text-slate-900 hover:opacity-90 transition">
+                    <span class="text-sky-600 bg-sky-50 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg border border-sky-200 font-extrabold text-base sm:text-lg">&lt;/&gt;</span>
                     <span class="font-display font-extrabold tracking-tight">Techsavyy</span>
                 </a>
 
-                <!-- Nav Links: Apps, About, Contact -->
-                <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                <div class="hidden md:flex items-center space-x-6 text-sm font-semibold text-slate-600">
                     <a href="#apps-section" class="hover:text-sky-600 transition-colors">Apps</a>
-                    <!--<a href="https://medium.com/@SrinivasanRaj" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 transition-colors">Writing on Medium</a>-->
                     <a href="https://srini.techsavyy.com" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 transition-colors">About</a>
                     <a href="mailto:srinivasanraj.mca@gmail.com" class="hover:text-sky-600 transition-colors">Contact</a>
                 </div>
 
-                <!-- CTA: Explore -->
-                <a href="#apps-section" class="glass-button text-sky-700 font-semibold px-5 py-2.5 rounded-xl text-sm flex items-center space-x-2 hover:text-sky-900">
-                    <span>Explore</span>
-                    <svg class="w-4 h-4 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                    </svg>
-                </a>
+                <div class="flex items-center gap-2 sm:gap-3 flex-1 justify-end min-w-0">
+                    <div class="relative flex items-center flex-1 sm:flex-none max-w-[200px] sm:max-w-none">
+                        <svg class="w-4 h-4 absolute left-3 text-sky-500 pointer-events-none shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                        <input
+                            id="app-search"
+                            type="search"
+                            placeholder="Search apps..."
+                            autocomplete="off"
+                            class="header-search-input pl-9 pr-12 py-2 bg-slate-50 rounded-xl border border-slate-200 text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all"
+                        />
+                        <kbd class="hidden sm:inline absolute right-2 bg-white border border-slate-200 text-slate-500 font-mono text-[10px] font-bold px-1.5 py-0.5 rounded pointer-events-none">⌘K</kbd>
+                    </div>
+                    <a href="#apps-section" class="shrink-0 inline-flex items-center gap-1.5 bg-sky-600 hover:bg-sky-700 text-white font-semibold px-3 sm:px-4 py-2 rounded-xl text-sm transition-colors">
+                        <span class="hidden sm:inline">Explore</span>
+                        <span class="sm:hidden">Go</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
+                    </a>
+                </div>
             </nav>
         </header>
 
         <!-- Main Hero Section -->
-        <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 w-full">
+        <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-6 w-full">
             
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-16">
-                <!-- Hero Left Column Text -->
-                <div class="lg:col-span-7 text-left space-y-6">
-                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full glass-panel text-xs font-mono font-bold tracking-wider text-sky-700 uppercase border-sky-200">
-                        <span class="w-2 h-2 rounded-full bg-sky-500 animate-ping"></span>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center mb-5">
+                <div class="lg:col-span-7 text-left space-y-3 sm:space-y-4">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-100 text-[11px] font-mono font-bold tracking-wider text-sky-700 uppercase">
+                        <span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span>
                         <span>BUILT FOR MYSELF · SHARED WITH EVERYONE</span>
                     </div>
 
-                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
+                    <h1 class="font-display text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold text-slate-900 tracking-tight leading-tight">
                         Ideas become
-                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-600 via-cyan-500 to-blue-600">things.</span>
+                        <span class="text-sky-600">things.</span>
                     </h1>
 
-                    <p class="text-lg text-slate-600 leading-relaxed max-w-xl">
+                    <p class="text-base text-slate-600 leading-snug max-w-xl">
                         Small tools, experiments and apps — built from curiosity and shared along the way.
                     </p>
 
-                    <div class="flex flex-wrap items-center gap-2 sm:gap-2.5 pt-1 max-w-xl">
+                    <div class="flex flex-wrap items-center gap-2 pt-0.5 max-w-xl">
                         <a
                             href="#apps-section"
-                            class="inline-flex items-center gap-2 bg-sky-600 hover:bg-sky-700 text-white font-semibold text-sm px-4 sm:px-5 py-2.5 sm:py-3 rounded-full shadow-md shadow-sky-600/25 transition-colors"
+                            class="inline-flex items-center gap-2 bg-sky-600 hover:bg-sky-700 text-white font-semibold text-sm px-4 py-2.5 rounded-xl shadow-sm shadow-sky-600/20 transition-colors"
                         >
                             <svg class="w-5 h-5 shrink-0 opacity-95" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
@@ -226,7 +292,7 @@
                             href="https://medium.com/@SrinivasanRaj"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="footer-support-link glass-button inline-flex items-center gap-2 text-sky-800 hover:text-sky-900 font-semibold text-sm px-4 sm:px-5 py-2.5 sm:py-3 rounded-full"
+                            class="footer-support-link glass-button inline-flex items-center gap-2 text-sky-800 hover:text-sky-900 font-semibold text-sm px-4 py-2.5 rounded-xl"
                             aria-label="Read my writing on Medium (opens in a new tab)"
                         >
                             <svg class="w-[18px] h-[18px] shrink-0 text-slate-800" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -238,7 +304,7 @@
                             href="https://buymeacoffee.com/srinivasanraj"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="footer-support-link inline-flex items-center gap-2 bg-white/70 hover:bg-white text-slate-700 font-semibold text-sm px-4 sm:px-5 py-2.5 sm:py-3 rounded-full border border-sky-200/70 shadow-sm transition-colors"
+                            class="footer-support-link inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm px-4 py-2.5 rounded-xl border border-slate-200 shadow-sm transition-colors"
                             aria-label="Buy me a coffee on Buy Me a Coffee (opens in a new tab)"
                         >
                             <img
@@ -250,24 +316,6 @@
                             />
                             <span>Buy Me a Coffee</span>
                         </a>
-                    </div>
-
-                    <!-- Search Input & Keyboard Shortcut -->
-                    <div class="relative max-w-md pt-2">
-                        <div class="relative flex items-center">
-                            <svg class="w-5 h-5 absolute left-4 text-sky-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-                            </svg>
-                            <input 
-                                id="app-search" 
-                                type="text" 
-                                placeholder="Search apps..." 
-                                class="w-full pl-12 pr-16 py-3.5 bg-white/80 backdrop-blur-md rounded-2xl border border-sky-200/80 text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent shadow-sm transition-all"
-                            />
-                            <div class="absolute right-3 bg-sky-100/80 border border-sky-200 text-sky-700 font-mono text-[11px] font-bold px-2 py-1 rounded-lg pointer-events-none">
-                                ⌘ K
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -288,14 +336,15 @@
             </div>
 
             <!-- Filter Buttons Section -->
-            <div id="apps-section" class="scroll-mt-24 mb-10">
-                <div class="flex items-center space-x-2 overflow-x-auto pb-2 scrollbar-none">
-                    <button class="filter-btn active px-4 py-2 rounded-xl text-xs font-bold font-mono tracking-wide transition-all bg-sky-600 text-white shadow-md shadow-sky-500/20" data-filter="all">All</button>
-                    <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold font-mono tracking-wide transition-all glass-button text-slate-600 hover:text-sky-600" data-filter="kids">Kids</button>
-                    <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold font-mono tracking-wide transition-all glass-button text-slate-600 hover:text-sky-600" data-filter="tools">Tools</button>
-                    <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold font-mono tracking-wide transition-all glass-button text-slate-600 hover:text-sky-600" data-filter="productivity">Productivity</button>
-                    <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold font-mono tracking-wide transition-all glass-button text-slate-600 hover:text-sky-600" data-filter="fun">Fun</button>
-                    <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold font-mono tracking-wide transition-all glass-button text-slate-600 hover:text-sky-600" data-filter="learning">Learning</button>
+            <div id="apps-section" class="scroll-mt-20 mb-6">
+                <div class="flex items-center gap-2 overflow-x-auto pb-1 filter-scroll">
+                    <button type="button" class="filter-btn active shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold font-mono tracking-wide transition-all bg-sky-600 text-white shadow-sm" data-filter="all">All</button>
+                    <button type="button" class="filter-btn shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold font-mono tracking-wide transition-all glass-button text-slate-600 hover:text-sky-600" data-filter="kids">Kids</button>
+                    <button type="button" class="filter-btn shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold font-mono tracking-wide transition-all glass-button text-slate-600 hover:text-sky-600" data-filter="tools">Tools</button>
+                    <button type="button" class="filter-btn shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold font-mono tracking-wide transition-all glass-button text-slate-600 hover:text-sky-600" data-filter="productivity">Productivity</button>
+                    <button type="button" class="filter-btn shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold font-mono tracking-wide transition-all glass-button text-slate-600 hover:text-sky-600" data-filter="finance">Finance</button>
+                    <button type="button" class="filter-btn shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold font-mono tracking-wide transition-all glass-button text-slate-600 hover:text-sky-600" data-filter="fun">Fun</button>
+                    <button type="button" class="filter-btn shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold font-mono tracking-wide transition-all glass-button text-slate-600 hover:text-sky-600" data-filter="learning">Learning</button>
                 </div>
             </div>
 
@@ -305,48 +354,39 @@
 
             <div id="apps-container" class="space-y-0" aria-live="polite"></div>
 
-            <!-- Footer Banner -->
-            <div class="glass-panel rounded-2xl p-6 text-center max-w-3xl mx-auto my-12 border-sky-200">
-                <div class="text-3xl mb-2">🚀</div>
-                <p class="font-display font-bold text-lg text-slate-900">More apps are coming...</p>
-                <p class="text-xs text-slate-500 mt-1 font-mono">Because apparently one app was never going to be enough.</p>
-            </div>
-
         </main>
 
         <!-- Main Footer -->
-        <footer class="mt-auto border-t border-sky-200/60 glass-panel py-8 relative z-10">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-                <div class="flex items-center space-x-2">
-                    <span class="font-bold text-slate-800 font-mono text-sm">⌂ Techsavyy</span>
-                    <span>/</span>
-                    <span class="text-slate-600">Built with curiosity.</span>
-                </div>
+        <footer class="mt-auto border-t border-slate-200 bg-white py-5 relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-4 text-sm text-slate-600">
+                    <p class="font-medium text-slate-800 text-center lg:text-left">
+                        <span class="font-display font-bold">Techsavyy</span>
+                        <span class="text-slate-400 mx-1.5">·</span>
+                        Built with curiosity.
+                    </p>
 
-                <div class="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-2 font-semibold text-slate-600">
-                    <a href="#apps-section" class="hover:text-sky-600 transition">Apps</a>
-                    <a href="https://medium.com/@SrinivasanRaj" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 transition flex items-center space-x-1" aria-label="Writing on Medium (opens in a new tab)">
-                        <span>Writing on Medium</span>
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
-                        </svg>
-                    </a>
-                    <a href="https://srini.techsavyy.com" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 transition">About</a>
-                    <a href="mailto:srinivasanraj.mca@gmail.com" class="hover:text-sky-600 transition">Contact</a>
-                    <a href="https://github.com/Srini-TechSavyy" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 transition flex items-center space-x-1">
-                        <span>GitHub</span>
-                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-                        </svg>
-                    </a>
-                    <a
-                        href="https://buymeacoffee.com/srinivasanraj"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="footer-support-link glass-button text-sky-700 px-3 py-1.5 rounded-lg text-xs hover:text-sky-900 transition whitespace-nowrap"
-                        aria-label="Buy me a coffee on Buy Me a Coffee (opens in a new tab)"
-                    >Buy me a coffee ☕</a>
+                    <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm font-semibold">
+                        <a href="#apps-section" class="hover:text-sky-600 transition">Apps</a>
+                        <a href="https://medium.com/@SrinivasanRaj" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 transition" aria-label="Writing on Medium (opens in a new tab)">Writing</a>
+                        <a href="https://srini.techsavyy.com" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 transition">About</a>
+                        <a href="mailto:srinivasanraj.mca@gmail.com" class="hover:text-sky-600 transition">Contact</a>
+                        <a href="https://github.com/Srini-TechSavyy" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 transition inline-flex items-center gap-1">
+                            GitHub
+                            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                            </svg>
+                        </a>
+                        <a
+                            href="https://buymeacoffee.com/srinivasanraj"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="footer-support-link glass-button text-sky-700 px-3 py-1.5 rounded-lg text-xs hover:text-sky-900 transition whitespace-nowrap"
+                            aria-label="Buy me a coffee on Buy Me a Coffee (opens in a new tab)"
+                        >Buy me a coffee</a>
+                    </div>
                 </div>
+                <p class="text-center text-xs text-slate-400 mt-4 font-mono">Because apparently one app was never going to be enough.</p>
             </div>
         </footer>
 
@@ -361,7 +401,17 @@
                 Kids: 'kids',
                 Utility: 'tools',
                 Learning: 'learning',
-                Finance: 'tools',
+                Finance: 'finance',
+                Games: 'fun',
+                Other: 'fun',
+                Productivity: 'productivity',
+            };
+            const SECTION_FILTER_SLUG = {
+                Kids: 'kids',
+                Learning: 'learning',
+                Utility: 'tools',
+                Finance: 'finance',
+                Games: 'fun',
                 Other: 'fun',
                 Productivity: 'productivity',
             };
@@ -370,15 +420,17 @@
                 Learning: { subtitle: 'Courses, quizzes, and classroom tools.' },
                 Utility: { subtitle: 'Simple tools for everyday problems.' },
                 Finance: { subtitle: 'Markets, ledgers, and price data.' },
+                Games: { subtitle: 'Quick experiments and play.' },
                 Other: { subtitle: 'Experiments and side projects.' },
                 Productivity: { subtitle: 'Get things done faster.' },
             };
-            const SECTION_ORDER = ['Kids', 'Learning', 'Utility', 'Finance', 'Other', 'Productivity'];
+            const SECTION_ORDER = ['Kids', 'Learning', 'Utility', 'Finance', 'Games'];
             const CATEGORY_ICON = {
                 Kids: '🎓',
                 Learning: '📚',
                 Utility: '🛠️',
                 Finance: '📊',
+                Games: '🎮',
                 Other: '✨',
                 Productivity: '⚡',
             };
@@ -424,19 +476,41 @@
                 }
                 const status = (app.status || '').toLowerCase();
                 if (status === 'in progress') {
-                    return { type: 'disabled', label: 'Building' };
+                    return { type: 'badge', label: 'Building', variant: 'amber' };
                 }
                 if (status === 'on hold') {
-                    return { type: 'disabled', label: 'On Hold' };
+                    return { type: 'badge', label: 'On Hold', variant: 'slate' };
                 }
-                return { type: 'disabled', label: 'Coming Soon' };
+                if (status === 'shelved') {
+                    return { type: 'badge', label: 'Coming Soon', variant: 'amber' };
+                }
+                return { type: 'badge', label: 'Coming Soon', variant: 'amber' };
             }
 
             function renderAction(action) {
                 if (action.type === 'link') {
-                    return `<a href="${escapeHtml(action.href)}" target="_blank" rel="noopener noreferrer" class="glass-button text-center w-full py-2.5 px-4 rounded-xl text-xs font-bold text-sky-700 hover:bg-sky-600 hover:text-white transition-all shadow-2xs">${escapeHtml(action.label)}</a>`;
+                    return `<a href="${escapeHtml(action.href)}" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-sky-600 hover:text-sky-700 transition-colors">${escapeHtml(action.label)}</a>`;
                 }
-                return `<button type="button" disabled class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-slate-100 border border-slate-200 text-slate-400 cursor-not-allowed text-center">${escapeHtml(action.label)}</button>`;
+                const badgeClass = action.variant === 'slate'
+                    ? 'bg-slate-100 text-slate-600 border-slate-200'
+                    : 'bg-amber-50 text-amber-800 border-amber-200/80';
+                const badgeLabel = action.label === 'Coming Soon' ? 'COMING SOON' : action.label.toUpperCase();
+                return `<span class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold tracking-wide border ${badgeClass}">${escapeHtml(badgeLabel)}</span>`;
+            }
+
+            function tagLabelForCategory(category) {
+                if (category === 'Utility') return 'Tools';
+                return category;
+            }
+
+            function renderMoreAppsPlaceholder() {
+                return `
+                    <div class="app-card app-card-placeholder p-5 sm:p-6 flex flex-col justify-center min-h-[180px] text-center" data-title="more apps coming" data-tags="fun games all placeholder" data-always-show="true">
+                        <div class="text-2xl mb-2" aria-hidden="true">🚀</div>
+                        <h3 class="font-display font-bold text-base text-slate-900">More apps are coming...</h3>
+                        <p class="text-xs text-slate-500 mt-1 font-mono leading-snug">Because apparently one app was never going to be enough.</p>
+                    </div>
+                `;
             }
 
             function renderAppCard(app) {
@@ -451,24 +525,27 @@
                 ].join(' ').toLowerCase();
                 const action = actionForApp(app);
                 const hasUrl = Boolean(app.url);
+                const cardClass = hasUrl ? 'app-card' : 'app-card app-card--muted';
                 const iconWrap = hasUrl
-                    ? 'bg-sky-100 border-sky-200 text-sky-600'
-                    : 'bg-slate-100 border-slate-200 text-slate-500';
+                    ? 'bg-sky-50 border-sky-100'
+                    : 'bg-slate-100 border-slate-200';
                 const icon = CATEGORY_ICON[category] || '📱';
+                const tagLabel = tagLabelForCategory(category);
                 const description = app.description
                     ? escapeHtml(app.description)
                     : '<span class="text-slate-400">No description yet.</span>';
 
                 return `
-                    <div class="app-card glass-card rounded-2xl p-6 flex flex-col justify-between min-h-[220px]" data-title="${escapeHtml(app.name.toLowerCase())}" data-tags="${escapeHtml(searchBlob)}">
-                        <div>
-                            <div class="w-10 h-10 rounded-xl ${iconWrap} border flex items-center justify-center mb-4 font-bold text-lg" aria-hidden="true">
-                                ${icon}
-                            </div>
-                            <h3 class="font-display font-bold text-lg text-slate-900 mb-2">${escapeHtml(app.name)}</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed mb-6">${description}</p>
+                    <div class="${cardClass} p-5 sm:p-6 flex flex-col h-full" data-title="${escapeHtml(app.name.toLowerCase())}" data-tags="${escapeHtml(searchBlob)}">
+                        <div class="w-9 h-9 rounded-lg ${iconWrap} border flex items-center justify-center mb-3 text-base" aria-hidden="true">
+                            ${icon}
                         </div>
-                        ${renderAction(action)}
+                        <h3 class="font-display font-bold text-lg text-slate-900 mb-1.5 leading-snug">${escapeHtml(app.name)}</h3>
+                        <p class="text-sm text-slate-600 leading-snug line-clamp-2 mb-3">${description}</p>
+                        <span class="inline-flex self-start px-2 py-0.5 rounded-md text-[11px] font-semibold bg-slate-100 text-slate-600 mb-3">${escapeHtml(tagLabel)}</span>
+                        <div class="mt-auto pt-1 flex justify-end">
+                            ${renderAction(action)}
+                        </div>
                     </div>
                 `;
             }
@@ -493,21 +570,50 @@
                 appsContainer.innerHTML = categories.map((category) => {
                     const items = grouped.get(category) || [];
                     const meta = SECTION_META[category] || { subtitle: 'Apps in this category.' };
-                    const cards = items.map(renderAppCard).join('');
+                    const sectionFilter = SECTION_FILTER_SLUG[category] || 'all';
+                    let cards = items.map(renderAppCard).join('');
+                    if (category === 'Games') {
+                        cards += renderMoreAppsPlaceholder();
+                    }
                     return `
-                        <section class="app-group mb-16" data-category="${escapeHtml(category.toLowerCase())}">
-                            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-6 pb-2 border-b border-sky-200/60">
+                        <section class="app-group section-block" data-category="${escapeHtml(category.toLowerCase())}">
+                            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-4 pb-3 border-b border-slate-200">
                                 <div>
-                                    <h2 class="font-display font-bold text-2xl text-slate-900 tracking-tight">${escapeHtml(category)}</h2>
-                                    <p class="text-sm text-slate-500 mt-1">${escapeHtml(meta.subtitle)}</p>
+                                    <h2 class="font-display font-bold text-[1.75rem] sm:text-3xl text-slate-900 tracking-tight leading-tight">${escapeHtml(category)}</h2>
+                                    <p class="text-sm text-slate-500 mt-0.5">${escapeHtml(meta.subtitle)}</p>
                                 </div>
+                                <button type="button" class="view-all-btn shrink-0 text-sm font-semibold text-sky-600 hover:text-sky-700 transition-colors self-start sm:self-auto" data-filter="${escapeHtml(sectionFilter)}">View all →</button>
                             </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="app-grid">
                                 ${cards}
                             </div>
                         </section>
                     `;
                 }).join('');
+                bindViewAllButtons();
+            }
+
+            function setActiveFilter(filter) {
+                activeFilter = filter || 'all';
+                filterBtns.forEach((b) => {
+                    const isActive = b.getAttribute('data-filter') === activeFilter;
+                    b.classList.toggle('bg-sky-600', isActive);
+                    b.classList.toggle('text-white', isActive);
+                    b.classList.toggle('shadow-sm', isActive);
+                    b.classList.toggle('glass-button', !isActive);
+                    b.classList.toggle('text-slate-600', !isActive);
+                });
+                filterApps();
+            }
+
+            function bindViewAllButtons() {
+                document.querySelectorAll('.view-all-btn').forEach((btn) => {
+                    btn.addEventListener('click', () => {
+                        const filter = btn.getAttribute('data-filter');
+                        setActiveFilter(filter);
+                        document.getElementById('apps-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    });
+                });
             }
 
             function filterApps() {
@@ -518,9 +624,13 @@
                 appCards.forEach((card) => {
                     const title = card.getAttribute('data-title') || '';
                     const tags = card.getAttribute('data-tags') || '';
+                    const alwaysShow = card.getAttribute('data-always-show') === 'true';
                     const matchesFilter = activeFilter === 'all' || tags.includes(activeFilter);
                     const matchesSearch = !query || title.includes(query) || tags.includes(query);
-                    card.style.display = matchesFilter && matchesSearch ? 'flex' : 'none';
+                    const visible = alwaysShow
+                        ? (activeFilter === 'all' || activeFilter === 'fun' || tags.includes(activeFilter)) && matchesSearch
+                        : matchesFilter && matchesSearch;
+                    card.style.display = visible ? 'flex' : 'none';
                 });
 
                 appGroups.forEach((group) => {
@@ -534,14 +644,7 @@
             function bindFilters() {
                 filterBtns.forEach((btn) => {
                     btn.addEventListener('click', () => {
-                        filterBtns.forEach((b) => {
-                            b.classList.remove('bg-sky-600', 'text-white', 'shadow-md', 'shadow-sky-500/20');
-                            b.classList.add('glass-button', 'text-slate-600');
-                        });
-                        btn.classList.remove('glass-button', 'text-slate-600');
-                        btn.classList.add('bg-sky-600', 'text-white', 'shadow-md', 'shadow-sky-500/20');
-                        activeFilter = btn.getAttribute('data-filter');
-                        filterApps();
+                        setActiveFilter(btn.getAttribute('data-filter'));
                     });
                 });
                 searchInput.addEventListener('input', filterApps);
