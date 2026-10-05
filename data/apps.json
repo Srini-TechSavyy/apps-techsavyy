@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05T03:52:26.125Z",
+  "updatedAt": "2026-10-05T12:33:23.333Z",
   "source": {
     "dataSourceId": "f3f89502-43d1-49d4-9ef6-eb4af133a6c6"
   },
@@ -53,10 +53,10 @@
       "id": "3e3c2c14-47a5-8130-885a-d9753e7254ce",
       "name": "Buddha – AI Investment Advisor",
       "category": "Finance",
-      "status": "On Hold",
+      "status": "In progress",
       "priority": "Low",
-      "url": null,
-      "description": "AI-powered investment assistant connected to brokerage data, providing portfolio analysis, investment ideas and research support."
+      "url": "https://invest.techsavyy.com",
+      "description": "A smart mutual fund analysis tool to compare funds, identify portfolio overlaps, and make informed investment decisions."
     },
     {
       "id": "3e3c2c14-47a5-81e7-85ec-c9055e089911",
@@ -102,6 +102,15 @@
       "priority": "High",
       "url": "https://learn.techsavyy.com",
       "description": "Kids learning platform for Ages 6-15 with subject-based practice, daily challenges, XP, parent-child accounts and a points redemption system."
+    },
+    {
+      "id": "3f0c2c14-47a5-80a0-969f-c339f462676c",
+      "name": "Financial Planner",
+      "category": "Other",
+      "status": "In progress",
+      "priority": null,
+      "url": "https://finplanner.techsavyy.com",
+      "description": "A simple personal finance app to track expenses, manage budgets, monitor subscriptions, and plan your financial future."
     },
     {
       "id": "3e3c2c14-47a5-81b8-af6a-fb9d19a0caf4",
