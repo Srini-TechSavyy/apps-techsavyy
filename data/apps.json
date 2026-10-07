@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T04:06:18.193Z",
+  "updatedAt": "2026-10-07T12:34:58.157Z",
   "source": {
     "dataSourceId": "f3f89502-43d1-49d4-9ef6-eb4af133a6c6"
   },
@@ -36,7 +36,7 @@
       "name": "Useful Books",
       "category": "Education",
       "status": "In progress",
-      "priority": null,
+      "priority": "Low",
       "url": "https://books.techsavyy.com",
       "description": "Curated useful books, designed to capture practical recommendations, summaries and ideas worth revisiting."
     },
@@ -44,7 +44,7 @@
       "id": "3e3c2c14-47a5-81b0-b9df-c072b2a13776",
       "name": "Whiteboard",
       "category": "Education",
-      "status": "Done",
+      "status": "In progress",
       "priority": "High",
       "url": "https://whiteboard.techsavyy.com",
       "description": "Interactive online whiteboard for teachers and learners to explain, draw and work through concepts digitally."
@@ -107,7 +107,7 @@
       "id": "3e3c2c14-47a5-81fb-a759-c56037f9c668",
       "name": "Bedtime Stories",
       "category": "Kids",
-      "status": "Done",
+      "status": "In progress",
       "priority": "High",
       "url": "https://stories.techsavyy.com",
       "description": "Kids storytelling with thought-provoking stories, speaker and dictation modes, and synchronized word highlighting for reading practice."
@@ -116,25 +116,16 @@
       "id": "3e3c2c14-47a5-814b-a18d-c1b5a31fed21",
       "name": "Learn Buddy",
       "category": "Kids",
-      "status": "Done",
+      "status": "In progress",
       "priority": "High",
       "url": "https://learn.techsavyy.com",
       "description": "Kids learning platform for Ages 6-15 with subject-based practice, daily challenges, XP, parent-child accounts and a points redemption system."
     },
     {
-      "id": "3e3c2c14-47a5-81b8-af6a-fb9d19a0caf4",
-      "name": "Gold Rate",
-      "category": "Utility",
-      "status": "Shelved",
-      "priority": "Medium",
-      "url": null,
-      "description": "Gold-rate utility showing gold prices across major Indian cities with Chennai as the default and an integrated gold-value calculator."
-    },
-    {
       "id": "3e3c2c14-47a5-81d3-a065-f1270fc8a647",
       "name": "Paperclip PDF",
       "category": "Utility",
-      "status": "Done",
+      "status": "In progress",
       "priority": "High",
       "url": "https://pdf.techsavyy.com",
       "description": "Browser-based PDF utility for converting documents, editing PDFs and handling common document workflows using Stirling PDF."
@@ -152,9 +143,9 @@
       "id": "3e3c2c14-47a5-81ad-b237-ee9a5709d49f",
       "name": "Useful Calculators",
       "category": "Utility",
-      "status": "Not started",
+      "status": "In progress",
       "priority": "Medium",
-      "url": null,
+      "url": "https://calculator.techsavyy.com",
       "description": "Collection of focused everyday calculators, starting with a small set of useful tools rather than a large calculator catalog."
     },
     {
