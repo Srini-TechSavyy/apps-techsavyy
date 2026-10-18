@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+<title id="title">Techsavyy logo</title>
+<defs><linearGradient id="red" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#DC2626"/><stop offset=".55" stop-color="#EF4444"/><stop offset="1" stop-color="#F87171"/></linearGradient><linearGradient id="shine" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity=".82"/></linearGradient></defs>
+<rect x="4" y="4" width="120" height="120" rx="28" fill="url(#red)"/>
+<path d="M25 40c0-5 4-9 9-9h60c7 0 11 5 9 11l-4 12c-1 4-5 7-9 7H69v36c0 7-5 11-11 11s-11-4-11-11V61H35c-7 0-11-5-9-11z" fill="url(#shine)"/>
+</svg>
